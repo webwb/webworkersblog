@@ -9,45 +9,20 @@ html
 
 
     .container
-
-      header
-        h1 
-          | the 
-          span.web web
-          span.workers workers
-          |  blog
-        h2 Developer / Frontend-Developer / Webdesigner / Nerds
-
+      header.pageheader
+        == partial "pageheader"
+      
       #main
-        nav
-          ul
-            li: a.active href="#" Blog
-            li: a href="#" Über&nbsp;uns
-            li: a href="#" Projekte
-            li: a href="#" Kontakt
+        nav.mainnavigation
+          == partial "mainnavigation"
 
         section
          - 5.times
           article
-            header 2014 — Rückblick. Vorausschau. Whatever. Preview
-            p Da ist es wieder, das neue Jahr und die Leute da draußen nehmen sich Sachen vor, wie jedes Jahr eben. Wahrscheinlich auch die gleichen Sachen die sie sich schon letztes Jahr vorgenommen haben …
-            footer
-              .author André Borges, 
-              time{pubdate date="2014-12-24"} 24.12.2014 |  
-              a.more href="#" mehr lesen
+            == partial "samplebloglisting"
+
         .pagination
-          a href="#" 
-            | Ältere Beiträge
-            span < 
-          a href="#" 
-            | Neuere Beiträge
-            span >
-      .footer
-        .footer-content 
-          .copy 
-            | © 2014 thewebworker
-          .rights
-            | All rights reserved.
-          .made
-            | Made in Germany
-        
+            == partial "pagination"
+
+      footer.footer
+            == partial "footer"
