@@ -37,11 +37,9 @@ body {
 	background: white;
 	font-family: Arial, sans-serif;
 	color: $text;
+}
 
-}
-.container {
-}
-.container > header {
+.pageheader {
 	// @include span-columns(7 omega);
 	width: 100%;
 	padding: 100px 0 ;
@@ -65,8 +63,8 @@ body {
 		color:$header-sub-text;
 	}
 }
-// 
-nav { 
+
+.mainnavigation { 
 	top: -60px;
 	left:-2px; // will be added by a's border.
 	position: relative;
@@ -86,7 +84,7 @@ nav {
 
 
 
-nav ul li a {
+.mainnavigation ul li a {
   @include unstyled-link;
  		margin: 2px;
  		padding: 4px;
