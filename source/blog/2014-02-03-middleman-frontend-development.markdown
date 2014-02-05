@@ -1,60 +1,87 @@
 ---
-title: middleman - slim template
+title: middleman - design umsetzen
 tags: [middleman, slim]
 ---
 
-# Slim - schicke schlanke Template-Engine
+# Design umsetzen
 
-[Slim](http://slim-lang.com) ist ein Template-Engine, die versucht die häufig sperrige Syntax zu vereinfachen; Spritzeklammern, schliessende Tags, ade. 
+Andre hat mir ein Design geschickt, dass ich jetzt prototypisch in HTML und CSS umsetze. 
 
-Middleman unterstüzt via `tilt` u.a. auch Slim <http://middlemanapp.com/basics/templates/#toc_9>. 
+![PSD](andres-design.png)
 
-Allerdings muss Middleman einmal im Gemfile und zum anderen in der config.rb bescheid geben, dass man Slim nutzen will. Das geht so ...
+## Struktur
 
-    echo 'gem "slim"' >> Gemfile
+Zuerst wird die Vorlage grob unterteilt. Es gibt einen Header mit Logo, eine Navigation, eine Liste mit Teasern und einen Footer. Als Liste: 
 
-    sed -i.$(date -u +"%Y-%m-%dT%lH:%M:%S") '1{x;s/$/require "slim"/;G;}' config.rb
+    header
+      h1 
+      h2
+    nav
+    section
+      article
+      article
+    footer
 
-## Standard layout.erb ersetzten
-
-Die erb dient erstmal als Vorlagen; das Original wird gesichert. 
-
-    cp source/layouts/layout.erb source/layouts/layout.html.slim
-    mv source/layouts/layout.erb source/layouts/original.layout.erb
-
-Nach ein der Umwandlung sieht das Layout jetzt so aus: 
+In ein [Slim](http://slim-lang.com)-Tempalte gegossen. Erstmal wurde hier die Datei `source/layouts/layout.html.slim` missbraucht. 
 
     doctype html
     html
       head
         meta charset="utf-8"
         meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'
-        title Blog Title #{'- ' + current_article.title unless current_article.nil?}
-        = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
+        title Prototype
       body
-        #main role="main"
-          == yield    
-        aside
-          h2 Recent Articles
-          ol
-            - blog.articles[0...10].each do |article| 
-              li = link_to article.title
-                span = article.date.strftime('%b %e')
-          h2 Tags
-          ol
-            - blog.tags.each do |tag, articles| 
-              li 
-                  = link_to tag, tag_path(tag) 
-                  |  (
-                  = articles.size
-                  | )
-          h2 By Year
-          ol
-            - blog.articles.group_by {|a| a.date.year }.each do |year, articles| 
-              li 
-                = link_to year, blog_year_path(year) 
-                |  (
-                = articles.size
-                | )
+        .container
+        header
+          h1 the webworkers blog
+          h2 Developer / Frontend-Developer / Webdesigner / Nerds
+        nav
+          ul
+            li
+              a href="#" Blog
+            li
+              a href="#" Über uns
+            li
+              a href="#" Projekte
+            li
+              a href="#" Kontakt
+        #main
+          section
+           - 5.times
+            article
+              header 2014 — Rückblick. Vorausschau. Whatever. Preview
+              p Da ist es wieder, das neue Jahr und die Leute da draußen nehmen
+              footer
+                .author André Borges
+                time{pubdate date="2014-12-24"} 24.12.2014
+            article
+        footer
 
+## Design
+
+Anstatt CSS direkt zu schreiben, wird [SASS](http://sass-lang.com) via [compass](http://compass-style.org) genutzt. Middleman konvertiert SASS Dateien on-the-fly. 
+
+    touch source/stylesheets/style.css.scss
+
+### Reset / Normalize
+
+Für das CSS wird [normalize.css](https://github.com/necolas/normalize.css/blob/master/normalize.css) statt eines klassischen CSS-Reset genutzt. 
+
+    mkdir source/stylesheets/vendor
+    cd source/stylesheets/vendor
+    wget https://raw.github.com/necolas/normalize.css/master/normalize.css
+
+In unserem SCSS sieht es dann so aus: 
+
+    $ cat screen.css.scss
+     // import normalize https://raw.github.com/necolas/normalize.css/master/normalize.css
+    @import 'vendor/normalize';
+
+Im Browser sieht es jetzt so aus. 
+![Seite mit normalize](2014-02-03_html-normalize.png)
+
+
+
+
+In die Gemfile gem "compass-normalize-plugin"
 
