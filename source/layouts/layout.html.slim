@@ -1,0 +1,53 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'
+    title Prototype
+    = stylesheet_link_tag "screen"
+  body
+
+
+    .container
+
+      header
+        h1 
+          | the 
+          span.web web
+          span.workers workers
+          |  blog
+        h2 Developer / Frontend-Developer / Webdesigner / Nerds
+
+      #main
+        nav
+          ul
+            li: a.active href="#" Blog
+            li: a href="#" Über&nbsp;uns
+            li: a href="#" Projekte
+            li: a href="#" Kontakt
+
+        section
+         - 5.times
+          article
+            header 2014 — Rückblick. Vorausschau. Whatever. Preview
+            p Da ist es wieder, das neue Jahr und die Leute da draußen nehmen sich Sachen vor, wie jedes Jahr eben. Wahrscheinlich auch die gleichen Sachen die sie sich schon letztes Jahr vorgenommen haben …
+            footer
+              .author André Borges, 
+              time{pubdate date="2014-12-24"} 24.12.2014 |  
+              a.more href="#" mehr lesen
+        .pagination
+          a href="#" 
+            | Ältere Beiträge
+            span < 
+          a href="#" 
+            | Neuere Beiträge
+            span >
+      .footer
+        .footer-content 
+          .copy 
+            | © 2014 thewebworker
+          .rights
+            | All rights reserved.
+          .made
+            | Made in Germany
+        

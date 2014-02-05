@@ -1,0 +1,192 @@
+//-----------------------------------------------------------------------------
+// Imports
+// normalize - https://raw.github.com/necolas/normalize.css/master/normalize.css
+@import 'vendor/normalize';
+@import "susy";
+@import "compass";
+@import "compass/reset";
+@import "compass/layout";
+
+
+
+$gelb: #fecf2f;
+$header-bg: #96c8df; // blau
+$header-sub-text: #aedcf1;
+$text: #6899b5;
+$footer-bg: #ddebf2;
+$footer-text: #85a7bb;
+
+$lucida-font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
+
+//-----------------------------------------------------------------------------
+// Grid Settings
+// @include border-box-sizing;
+
+$total-columns  : 7;
+$column-width   : 4em;
+$gutter-width   : 1em;
+$grid-padding   : $gutter-width;
+
+$break          : 12;
+
+//-----------------------------------------------------------------------------
+// Layout
+
+
+body {
+	background: white;
+	font-family: Arial, sans-serif;
+	color: $text;
+
+}
+.container {
+}
+.container > header {
+	// @include span-columns(7 omega);
+	width: 100%;
+	padding: 100px 0 ;
+	background: $header-bg;
+	text-align: center;
+	@include text-shadow(2px 2px 5px #aaaaaa);
+	color: white;
+	font-family: $lucida-font-family;
+	h1 {
+		font-size: 2em;
+		letter-spacing:-3px;
+		span {
+  			font-size: 2.0em;
+		}
+		.workers {
+			color:$gelb;
+		}
+	}
+	h2 {
+		font-size: 1em;
+		color:$header-sub-text;
+	}
+}
+// 
+nav { 
+	top: -60px;
+	left:-2px; // will be added by a's border.
+	position: relative;
+	text-align: justify; 
+	ul { display:inline; 
+		li { display:inline-block; 
+			a { display:inline-block; 
+			}
+		}
+	}
+	&:after {
+  		content: '';
+  		width: 100%; /* Ensures there are at least 2 lines of text, so justification works */
+  		display: inline-block;
+	}	
+}
+
+
+
+nav ul li a {
+  @include unstyled-link;
+ 		margin: 2px;
+ 		padding: 4px;
+ 		color:white;
+  &.active {
+  		border-bottom: 2px $gelb solid;
+  		margin-bottom: 0;
+  }
+  &:hover { 
+  	@include border-radius;
+  	 	border: 2px white solid;
+ 		margin: 0;
+  }
+}
+
+@mixin hover-btn-unhover {
+	padding: 5px 8px;
+	border: 2px #6899b5 solid;
+	font-weight: bold;
+	border-radius: 5px;
+	color: #6899b5;
+	font-size: 0.8em;
+	text-decoration: none;
+}
+@mixin hover-btn-hover {
+	border: 2px transparent solid;
+	background: #6899b5;
+	color:white;
+}
+@mixin hover-btn {
+	@include hover-btn-unhover;
+	&:hover { @include hover-btn-hover; }
+}
+#main {
+	@include container($total-columns, $break);
+	section {
+		@include span-columns(7 omega);
+		article {
+			border-top: 4px $gelb solid;
+			padding-top: 2em;
+			header {
+				font-size: 1.2em;
+				font-weight: bold;
+				padding-bottom: 1em;
+			}
+			footer {
+				text-align: right;
+				color: #b3c9d6;
+				
+				padding: 1em 0 2em;
+				.author {
+					display: inline;
+					font-size: 0.9em;
+				}
+				.more {
+					@include hover-btn;
+					display: inline-block;
+					margin-left: 2px;
+				}
+			}
+		}		
+	}
+}
+
+.pagination {
+	@include span-columns(7 omega);
+	padding: 3em 0 2em;
+	a { 
+		@include hover-btn-unhover; 
+		@include hover-btn-hover; 
+		position: relative;
+		span {
+			position: absolute;
+			color: #6899b5;
+		}
+		&:first-child {
+			float:left;
+			span { left:-1.5em; }
+		}
+		&:last-child {
+			float: right;
+			span { right:-1.5em; }
+		}
+	}
+}
+
+.footer { 
+	background: $footer-bg;
+	color:$footer-text;
+	padding:2em 0;
+	// @include clearfix;
+	}
+.footer-content {
+	@include container($total-columns, $break);
+	padding-bottom: 10em;
+	.copy {
+		font-weight: bold;
+		line-height: 2em;
+	}
+	.rights, .made { font-size: .8em;}
+
+}
+
