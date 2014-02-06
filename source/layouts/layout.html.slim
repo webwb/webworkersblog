@@ -10,10 +10,6 @@ html
         nav.mainnavigation
           == partial "mainnavigation"
         section
-          - 5.times
-            article
-              == partial "samplebloglisting"
-        .pagination
-            == partial "pagination"
+          = yield
       footer.footer
             == partial "footer"

@@ -1,6 +1,6 @@
 ---
-title: Middleman - LiveReload
-date: 2014-02-02
+title: Middleman - Sample 01
+date: 2014-02-06
 tags: [middleman, livereload]
 ---
 
@@ -9,6 +9,7 @@ tags: [middleman, livereload]
 [http://livereload.com/](http://livereload.com/) refreshed den Browser, sobald Änderungen an den Sourcen gemacht wurden. 
 
 Zur Aktivierung muss lediglich das Kommentar `#` in der entsprechende Zeile in der `config.rb` entfernt werden. 
+
 
 Hier in 3 Schritten CLI.
 
