@@ -1,6 +1,5 @@
 ul
-	li: a.active href="#" Blog
-	li: a href="#" Über&nbsp;uns
-	li: a href="#" Projekte
-	li: a href="#" Kontakt
-	
+	li = link_to "Blog", "/blog", :class => "active"
+	li = link_to "Über uns", "/about"
+	li = link_to "Projekte", "/projects"
+	li = link_to "Kontakt", "/contact"
