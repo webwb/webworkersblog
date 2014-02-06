@@ -1,28 +1,19 @@
 doctype html
 html
   head
-    meta charset="utf-8"
-    meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'
-    title Prototype
-    = stylesheet_link_tag "screen"
+    == partial "htmlhead"
   body
-
-
     .container
       header.pageheader
         == partial "pageheader"
-      
       #main
         nav.mainnavigation
           == partial "mainnavigation"
-
         section
-         - 5.times
-          article
-            == partial "samplebloglisting"
-
+          - 5.times
+            article
+              == partial "samplebloglisting"
         .pagination
             == partial "pagination"
-
       footer.footer
             == partial "footer"
