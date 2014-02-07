@@ -1,6 +1,6 @@
 require "slim"
 require 'susy'
-
+require 'bootstrap-sass'
 # Set slim-lang output style
 Slim::Engine.set_default_options :pretty => true
 

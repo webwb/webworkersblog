@@ -10,4 +10,4 @@ gem "middleman-livereload"
 gem "slim"
 gem "nokogiri"
 gem 'susy'
-# gem 'font-awesome-sass'
+gem 'bootstrap-sass'
