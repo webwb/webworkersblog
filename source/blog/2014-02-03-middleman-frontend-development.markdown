@@ -2,6 +2,7 @@
 title: middleman - design umsetzen
 date: 2014-02-03
 tags: [middleman, slim]
+category: design
 ---
 
 Andre hat mir ein Design geschickt, dass ich jetzt prototypisch in HTML und CSS umsetze. 

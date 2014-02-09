@@ -2,6 +2,7 @@
 title: Multimarkdown Tests
 date: 2014-02-09
 tags: [markdown]
+category: code
 ---
 
 # Introduction #

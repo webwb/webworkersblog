@@ -1,6 +1,7 @@
 ---
 title: Middleman - Setup
 date: 2014-02-02
+category: code
 tags: [middleman]
 ---
 

@@ -2,6 +2,7 @@
 title: Middleman - Live Reload
 date: 2014-02-06
 tags: [middleman, livereload]
+category: code
 ---
 
 [Livereload](http://livereload.com/) refreshed den Browser sobald Änderungen an den Sourcen gespeichert werden. 

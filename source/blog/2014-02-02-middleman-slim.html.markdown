@@ -2,6 +2,7 @@
 title: middleman - slim template
 date: 2014-02-02
 tags: [middleman, slim]
+category: code
 ---
 
 # Slim - schicke schlanke Template-Engine
