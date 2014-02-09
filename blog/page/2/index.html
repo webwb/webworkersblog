@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge;chrome=1" http-equiv="X-UA-Compatible" />
+    <title>Prototype</title><link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="banner">
+        <h1><a href="/">
+          the <span class="web">web</span><span class="workers">workers</span> blog</a>
+        </h1>
+        <h2>
+          Developer / Frontend-Developer / Webdesigner / Nerds
+        </h2>
+      </header>
+      <div id="main">
+        <nav class="mainnavigation">
+          <ul>
+            <li>
+              <a class="active" href="/blog">Blog</a>
+            </li>
+            <li>
+              <a href="/about.html">Über uns</a>
+            </li>
+            <li>
+              <a href="/projects.html">Projekte</a>
+            </li>
+            <li>
+              <a href="/contact.html">Kontakt</a>
+            </li>
+          </ul>
+        </nav>
+        <section><article>
+  <header>
+    <h2>
+      <a href="/blog/2014/02/09/multimarkdown-test-page.html">09.02. -  Multimarkdown Tests</a>
+    </h2>
+    <h1 id="introduction">Introduction</h1>
+    
+    <p>As I  add increasing numbers  of features to  MultiMarkdown, I decided  it was
+    time to create  a sample document to  show them off. Many of  the features are
+    demonstrated in the <a title="MultiMarkdown User's Guide" href="http://fletcherpenney.net/mmd/users_guide/">MultiMarkdown User's Guide</a>, but some are not.</p>
+    
+    <p>Additionally,  it's easy  for those  features to  get lost...</p>
+  </header>
+  <footer>
+    <ul class="article-tags">
+      <li>
+        <a href="/blog/tags/markdown.html">markdown</a>
+      </li>
+    </ul>
+    <a class="more" href="/blog/2014/02/09/multimarkdown-test-page.html">mehr lesen</a><time datetime="2014-02-09">, 09.02.2014 |</time>
+    <div class="author">
+      André Borges 
+    </div>
+  </footer>
+</article><article>
+  <header>
+    <h2>
+      <a href="/blog/2014/02/07/theother-pages.html">07.02. -  Middleman - Setting us the root pages</a>
+    </h2>
+    <p>The main navigation targets are still not set. Doing this, now. </p>
+    
+    <ul>
+      <li><a href="/about.html">Über uns</a></li>
+      <li><a href="/projects/">Projekte</a></li>
+      <li><a href="/contact/">Kontakt</a></li>
+    </ul>
+    
+    
+  </header>
+  <footer>
+    <ul class="article-tags">
+      <li>
+        <a href="/blog/tags/middleman.html">middleman</a>
+      </li>
+    </ul>
+    <a class="more" href="/blog/2014/02/07/theother-pages.html">mehr lesen</a><time datetime="2014-02-07">, 07.02.2014 |</time>
+    <div class="author">
+      André Borges 
+    </div>
+  </footer>
+</article><article>
+  <header>
+    <h2>
+      <a href="/blog/2014/02/06/middleman-sample.html">06.02. -  Middleman - Live Reload</a>
+    </h2><p><a href="http://livereload.com/">Livereload</a> refreshed den Browser sobald Änderungen an den Sourcen gespeichert werden. </p>
+
+<p>Zur Aktivierung muss in <code>config.rb</code> lediglich das Kommentar (<code>#</code>) in der folgenden Zeile entfernt werden. </p>
+
+<pre><code># activate :livereload
+</code></pre>
+
+<p>Hier in per <code>sed</code>: </p>
+
+<pre><code>$ grep -A1 -B1 livereload config.rb
+# Reload the browser automatically...</code></pre>
+  </header>
+  <footer>
+    <ul class="article-tags">
+      <li>
+        <a href="/blog/tags/middleman.html">middleman</a>
+      </li>
+      <li>
+        <a href="/blog/tags/livereload.html">livereload</a>
+      </li>
+    </ul>
+    <a class="more" href="/blog/2014/02/06/middleman-sample.html">mehr lesen</a><time datetime="2014-02-06">, 06.02.2014 |</time>
+    <div class="author">
+      André Borges 
+    </div>
+  </footer>
+</article><article>
+  <header>
+    <h2>
+      <a href="/blog/2014/02/03/middleman-frontend-development.html">03.02. -  middleman - design umsetzen</a>
+    </h2><p>Andre hat mir ein Design geschickt, dass ich jetzt prototypisch in HTML und CSS umsetze. </p>
+
+<p><img alt="PSD" src="/images/andres-design.png"></p>
+
+<h2 id="struktur">Struktur</h2>
+
+<p>Zuerst wird die Vorlage grob unterteilt. Es gibt einen Header mit Logo, eine Navigation, eine Liste mit Teasern und einen Footer. Als Liste: </p>
+
+<pre><code>header
+  h1 
+  h2
+nav
+section
+  article
+  article
+footer...</code></pre>
+  </header>
+  <footer>
+    <ul class="article-tags">
+      <li>
+        <a href="/blog/tags/middleman.html">middleman</a>
+      </li>
+      <li>
+        <a href="/blog/tags/slim.html">slim</a>
+      </li>
+    </ul>
+    <a class="more" href="/blog/2014/02/03/middleman-frontend-development.html">mehr lesen</a><time datetime="2014-02-03">, 03.02.2014 |</time>
+    <div class="author">
+      André Borges 
+    </div>
+  </footer>
+</article><article>
+  <header>
+    <h2>
+      <a href="/blog/2014/02/02/middleman-slim.html">02.02. -  middleman - slim template</a>
+    </h2><h1 id="slim---schicke-schlanke-template-engine">Slim - schicke schlanke Template-Engine</h1>
+
+<p><a href="http://slim-lang.com">Slim</a> ist ein Template-Engine, die versucht die häufig sperrige Syntax zu vereinfachen; Spritzeklammern, schliessende Tags, ade. </p>
+
+<p>Middleman unterstüzt via <code>tilt</code> u.a. auch Slim <a href="http://middlemanapp.com/basics/templates/#toc_9">http://middlemanapp.com/basics/templates/#toc_9</a>. </p>
+
+<p>Allerdings muss Middleman einmal...</p>
+  </header>
+  <footer>
+    <ul class="article-tags">
+      <li>
+        <a href="/blog/tags/middleman.html">middleman</a>
+      </li>
+      <li>
+        <a href="/blog/tags/slim.html">slim</a>
+      </li>
+    </ul>
+    <a class="more" href="/blog/2014/02/02/middleman-slim.html">mehr lesen</a><time datetime="2014-02-02">, 02.02.2014 |</time>
+    <div class="author">
+      André Borges 
+    </div>
+  </footer>
+</article>
+        </section>
+      </div>
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="copy">
+            © 2014 thewebworker
+          </div>
+          <div class="rights">
+            All rights reserved.
+          </div>
+          <div class="made">
+            Made in Germany 
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

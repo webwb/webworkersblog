@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog Name</title>
+  <subtitle>Blog subtitle</subtitle>
+  <id>http://blog.url.com/blog</id>
+  <link href="http://blog.url.com/blog"/>
+  <link href="http://blog.url.com/feed.xml" rel="self"/>
+  <updated>2014-02-09T00:00:00Z</updated>
+  <author>
+    <name>Blog Author</name>
+  </author>
+  <entry>
+    <title>Multimarkdown Tests</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2014/02/09/multimarkdown-test-page.html"/>
+    <id>http://blog.url.com/blog/2014/02/09/multimarkdown-test-page.html</id>
+    <published>2014-02-09T00:00:00Z</published>
+    <updated>2014-02-09T17:48:59+01:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;As I  add increasing numbers  of features to  MultiMarkdown, I decided  it was
+time to create  a sample document to  show them off. Many of  the features are
+demonstrated in the &lt;a title="MultiMarkdown User's Guide" href="http://fletcherpenney.net/mmd/users_guide/"&gt;MultiMarkdown User's Guide&lt;/a&gt;, but some are not.&lt;/p&gt;
+
+&lt;p&gt;Additionally,  it's easy  for those  features to  get lost  within all  of the
+technical  documentation.  This document  is  designed  to &lt;em&gt;demonstrate&lt;/em&gt;,  not
+describe, most of the features of MultiMarkdown.&lt;/p&gt;
+
+&lt;h1 id="how-to-use-this-document"&gt;How to Use This Document&lt;/h1&gt;
+
+&lt;p&gt;I suggest comparing  the raw text source with the  various final outputs (e.g.
+HTML, LaTeX,  PDF, OpenDocument)  in order  to see  what can  be accomplished.
+There  will be  many  similarities  between output  formats,  but  also a  few
+differences. Tables will end up in different places. Paragraphs won't break in
+the same way. But these differences are superficial and are a result of trying
+to optimize  each format,  without regard to  identical output  across formats
+(which would be virtually impossible).&lt;/p&gt;
+
+&lt;p&gt;Remember, the main goal of Markdown\MultiMarkdown  is to allow you to create a
+document in  plain text,  with minimal  distraction from  markup, that  can be
+transformed into a variety of high quality outputs. Or, to quote John Gruber:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The overriding design goal for Markdown's formatting syntax is to make it as
+readable as possible. The idea is that a Markdown-formatted document should be
+publishable as-is,  as plain text,  without looking  like it's been  marked up
+with  tags  or  formatting  instructions. While  Markdown's  syntax  has  been
+influenced by several existing text-to-HTML filters, the single biggest source
+of  inspiration   for  Markdown's   syntax  is  the   format  of   plain  text
+email.&lt;a href="John%20Gruber.%20%20Daring%20Fireball:%20Markdown.%20[Cited%20January%202006]."&gt;#Gruber&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Available from &lt;a href="http://daringfireball.net/projects/markdown/"&gt;http://daringfireball.net/projects/markdown/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id="where-can-i-get-a-copy"&gt;Where Can I Get a Copy?&lt;/h1&gt;
+
+&lt;p&gt;You can download a zipfile containing multiple formats of this document:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="http://fletcher.github.com/MultiMarkdown-Gallery"&gt;MultiMarkdown-Gallery&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This file includes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A plain text file in MultiMarkdown format&lt;/li&gt;
+  &lt;li&gt;A Scrivener file&lt;/li&gt;
+  &lt;li&gt;An HTML file&lt;/li&gt;
+  &lt;li&gt;A PDF&lt;/li&gt;
+  &lt;li&gt;An OpenDocument file&lt;/li&gt;
+  &lt;li&gt;An OPML&lt;/li&gt;
+  &lt;li&gt;A LaTeX file&lt;/li&gt;
+  &lt;li&gt;And the included images&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All files were generated automatically from the MultiMarkdown source document.&lt;/p&gt;
+
+&lt;h1 id="so-what-can-this-document-demonstrate"&gt;So, What Can This Document Demonstrate?&lt;/h1&gt;
+
+&lt;h2 id="metadata"&gt;Metadata&lt;/h2&gt;
+
+&lt;p&gt;First, take  a look  at the  overall structure  of the  document. At  the very
+beginning  is  metadata,  including   a  title,  author,  keywords,  copyright
+information, etc.  Where possible,  this metadata is  put to  appropriate use,
+otherwise it is  stored in a format  designed to be easily  read and minimally
+distracting:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;In plain text and XHTML snippets&lt;sup id="fnref:snippets"&gt;&lt;a href="#fn:snippets" class="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;, it is located at the top of the
+document.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In a full XHTML document, is located in the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; section, and the title
+and CSS metadata, if present, are used appropriately.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In a PDF generated from my XSLT files, metadata is used to generate the
+appropriate fields (title, author, keywords) in the PDF itself. Some PDF
+readers will let you examine this data. Additionally, the title, subtitle,
+author, and copyright are placed at the beginning of the document.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In a Scrivener document, you can put the metadata in the first File in the
+Binder, but the preferred location is in the "MultiMarkdown Settings…"
+pane (in the File Menu.)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are a lot of standard metadata keys  that can be used, or you can create
+your own and use them as you see fit. Definitely a powerful feature.&lt;/p&gt;
+
+&lt;h2 id="structure"&gt;Structure&lt;/h2&gt;
+
+&lt;p&gt;The next thing  to look at is  the overall structure of the  document. You can
+visualize  a Markdown  document as  an  outline, with  different sections  and
+different levels within those sections. Based on your output format, these can
+be used to generate headers, or sections,  or even chapters. It's all based on
+what tools you use to process the XHTML output.&lt;/p&gt;
+
+&lt;p&gt;Even within the XHTML document, however, you can make use of this structure to
+allow  easy navigation  within  the document.  You can  link  directly to  the
+[Introduction][] (and to [][Introduction] when using LaTeX), for instance. And
+if you are creating  a PDF, it will contain a hierarchy  of section names that
+you  can use  to  allow easy  navigation,  if your  PDF  reader supports  this
+function.&lt;/p&gt;
+
+&lt;h2 id="footnotes"&gt;Footnotes&lt;/h2&gt;
+
+&lt;p&gt;Footnotes are  very easy to  implement in  MultiMarkdown, as described  in the
+MultiMarkdown Syntax Guide.&lt;sup id="fnref:somesamplefootnote"&gt;&lt;a href="#fn:somesamplefootnote" class="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h2 id="fence-code-block"&gt;Fence Code Block&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;code block in here
+$foo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="tables"&gt;Tables&lt;/h2&gt;
+
+&lt;p&gt;Tables  can be  quite useful  for  showing data  in  a meaningful  way. As  an
+example, here is a table comparing [MultiMarkdown vs. Crayons][].&lt;/p&gt;
+
+&lt;p&gt;[This is a caption with &lt;em&gt;italics&lt;/em&gt;][MultiMarkdown vs. Crayons]  &lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Features&lt;/th&gt;
+      &lt;th style="text-align: center"&gt;MultiMarkdown&lt;/th&gt;
+      &lt;th style="text-align: center"&gt;Crayons&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Melts in warm places&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;No&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Mistakes can be easily fixed&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;Yes&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;No&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Easy to copy documents for friends&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;Yes&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;No&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Fun at parties&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;No&lt;sup id="fnref:parties"&gt;&lt;a href="#fn:parties" class="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;Why not?&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Minimum markup for maximum quality?&lt;/td&gt;
+      &lt;td&gt;Yes&lt;/td&gt;
+      &lt;td&gt;No&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The following table is the 1st col left, 2nd centered and 3rd right aligned.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style="text-align: left"&gt;Features&lt;/th&gt;
+      &lt;th style="text-align: center"&gt;MultiMarkdown&lt;/th&gt;
+      &lt;th style="text-align: right"&gt;Crayons&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: left"&gt;Left algined text&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;chunky&lt;/td&gt;
+      &lt;td style="text-align: right"&gt;0,99 €&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: left"&gt;this, too&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;bacon&lt;/td&gt;
+      &lt;td style="text-align: right"&gt;9.49 €&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id="typographical-conventions"&gt;Typographical conventions&lt;/h2&gt;
+
+&lt;p&gt;By incorporating John Gruber's &lt;a href="http://daringfireball.net/projects/smartypants/"&gt;SmartyPants&lt;/a&gt; program into your workflow, you
+can generate more  "correct" typographic punction in your XHTML  pages, and in
+your  LaTeX source  if  you are  generating PDF's—this  includes  en and  em
+dashes, and ellipses….&lt;/p&gt;
+
+&lt;p&gt;Very nice when you want to focus on writing, not grammar.&lt;/p&gt;
+
+&lt;h2 id="image-support"&gt;Image Support&lt;/h2&gt;
+
+&lt;p&gt;If you choose to incorporate images in your documents, this can be easily done
+as well. MultiMarkdown  makes it easier to link to  images and include various
+attributes.&lt;/p&gt;
+
+&lt;p&gt;As   an  example,   here  is   an  image   from  my   website  —   &lt;a href="#nautilusstar"&gt;Nautilus
+Star&lt;/a&gt;. If you  have a local copy of the  image, you can include
+the image in a pdf.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="This is a **bolded** caption" title="Nautilus Star&amp;quot; width=&amp;quot;3in&amp;quot; height=&amp;quot;2.4in" src="/images/upload.png" /&gt;&lt;/p&gt;
+
+&lt;h2 id="bibliography-support"&gt;Bibliography Support&lt;/h2&gt;
+
+&lt;p&gt;MultiMarkdown offers  several mechanisms  for managing bibliographies.  It has
+built-in  support   for  basic   citation  and  bibliography   management  and
+formatting, or you  can rely on external  tools to handle this  for you. There
+aren't  many  citations in  this  document,  but I  think  it  gets the  point
+across.&lt;a href="John%20Doe.%20*A%20Totally%20Fake%20Book*.%20%20Vanity%20Press,%202006."&gt;p. 42&lt;/a&gt;
+{.alert}&lt;/p&gt;
+
+&lt;h2 id="glossary-support"&gt;Glossary Support&lt;/h2&gt;
+
+&lt;p&gt;MultiMarkdown  has  a  special  format for  footnotes  that  should  represent
+glossary terms. This  doesn't make much difference in XHTML  (because there is
+no such thing as a glossary in XHTML),  but can be used to generate a glossary
+within LaTeX documents.&lt;/p&gt;
+
+&lt;p&gt;For example,  let's have  an entry for  &lt;code&gt;glossary&lt;/code&gt;.&lt;sup id="fnref:glossary"&gt;&lt;a href="#fn:glossary" class="footnote"&gt;4&lt;/a&gt;&lt;/sup&gt; And  what about
+ampersands?&lt;sup id="fnref:amp"&gt;&lt;a href="#fn:amp" class="footnote"&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Since we  want the ampersand  entry to  be sorted with  the a's, and  not with
+symbols, we put in the optional sort key &lt;code&gt;ampersand&lt;/code&gt; to control sorting.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[^glossary]: glossary: Glossary 
+    A section at the end ...
+    
+[^amp]: glossary: &amp;amp; (ampersand)
+    A punctuation mark ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="math-support"&gt;Math Support&lt;/h2&gt;
+
+&lt;p&gt;It's pretty easy to include mathematical equations:&lt;/p&gt;
+
+&lt;p&gt;\[ {e}^{i\pi }+1=0 \]&lt;/p&gt;
+
+&lt;p&gt;\[ {x}_{1,2}=\frac{-b\pm \sqrt{{b}^{2}-4ac}}{2a} \]&lt;/p&gt;
+
+&lt;p&gt;You can also include formulas within a sentence, such as
+\({x}^{2}+{y}^{2}=1\).&lt;/p&gt;
+
+&lt;h1 id="now-what"&gt;Now What?&lt;/h1&gt;
+
+&lt;p&gt;Get out there and try it. Let me know what you think. Let me know what doesn't
+work. Let me know what you think is missing.&lt;/p&gt;
+
+&lt;p&gt;In other words, help me make it better!&lt;/p&gt;
+
+&lt;p&gt;You can get more information on my web site:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="http://fletcherpenney.net/multimarkdown"&gt;http://fletcherpenney.net/multimarkdown&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can also:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Email me:&lt;br /&gt;
+  &lt;a href="&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#111;&amp;#119;&amp;#110;&amp;#101;&amp;#114;&amp;#064;&amp;#102;&amp;#108;&amp;#101;&amp;#116;&amp;#099;&amp;#104;&amp;#101;&amp;#114;&amp;#112;&amp;#101;&amp;#110;&amp;#110;&amp;#101;&amp;#121;&amp;#046;&amp;#110;&amp;#101;&amp;#116;"&gt;&amp;#111;&amp;#119;&amp;#110;&amp;#101;&amp;#114;&amp;#064;&amp;#102;&amp;#108;&amp;#101;&amp;#116;&amp;#099;&amp;#104;&amp;#101;&amp;#114;&amp;#112;&amp;#101;&amp;#110;&amp;#110;&amp;#101;&amp;#121;&amp;#046;&amp;#110;&amp;#101;&amp;#116;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Join the MultiMarkdown discussion list:&lt;br /&gt;
+  &lt;a href="http://groups.google.com/group/multimarkdown"&gt;http://groups.google.com/group/multimarkdown&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Join the Markdown discussion list:&lt;br /&gt;
+  &lt;a href="http://six.pairlist.net/mailman/listinfo/markdown-discuss"&gt;http://six.pairlist.net/mailman/listinfo/markdown-discuss&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="footnotes"&gt;
+  &lt;ol&gt;
+    &lt;li id="fn:snippets"&gt;
+      &lt;p&gt;An XHTML  snippet is my terminology for XHTML  code that does not include the &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;, and  &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tags. Most browsers will display it  properly, but  it is  not a  complete XHTML  document. Without  a &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; section there is nowhere to put metadata(e.g. there is no &lt;code&gt;&amp;lt;title&amp;gt;&lt;/code&gt;). &lt;a href="#fnref:snippets" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id="fn:somesamplefootnote"&gt;
+      &lt;p&gt;Here is the text of the footnote itself. &lt;a href="#fnref:somesamplefootnote" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id="fn:parties"&gt;
+      &lt;p&gt;I guess it depends on what kind of parties you go to… &lt;a href="#fnref:parties" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id="fn:glossary"&gt;
+      &lt;p&gt;glossary: Glossary 
+A section at the end … &lt;a href="#fnref:glossary" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id="fn:amp"&gt;
+      &lt;p&gt;glossary: &amp;amp; (ampersand)
+A punctuation mark … &lt;a href="#fnref:amp" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Middleman - Setting us the root pages</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2014/02/07/theother-pages.html"/>
+    <id>http://blog.url.com/blog/2014/02/07/theother-pages.html</id>
+    <published>2014-02-07T00:00:00Z</published>
+    <updated>2014-02-09T18:05:20+01:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;The main navigation targets are still not set. Doing this, now. &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="/about.html"&gt;Über uns&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="/projects/"&gt;Projekte&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="/contact/"&gt;Kontakt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>Middleman - Live Reload</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2014/02/06/middleman-sample.html"/>
+    <id>http://blog.url.com/blog/2014/02/06/middleman-sample.html</id>
+    <published>2014-02-06T00:00:00Z</published>
+    <updated>2014-02-09T01:17:02+01:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;a href="http://livereload.com/"&gt;Livereload&lt;/a&gt; refreshed den Browser sobald Änderungen an den Sourcen gespeichert werden. &lt;/p&gt;
+
+&lt;p&gt;Zur Aktivierung muss in &lt;code&gt;config.rb&lt;/code&gt; lediglich das Kommentar (&lt;code&gt;#&lt;/code&gt;) in der folgenden Zeile entfernt werden. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# activate :livereload
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hier in per &lt;code&gt;sed&lt;/code&gt;: &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ grep -A1 -B1 livereload config.rb
+# Reload the browser automatically whenever files change
+# activate :livereload
+$ sed -i.$(date -u +"%Y-%m-%dT%H:%M:%S") '/# activate :livereload/s/^#//' config.rb
+$ grep -A1 -B1 livereload config.rb
+# Reload the browser automatically whenever files change
+ activate :livereload
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Damit &lt;code&gt;middleman&lt;/code&gt; LiveReload findet, muss das &lt;code&gt;Gemfile&lt;/code&gt; entsprechend ergänzt werden. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo 'gem "middleman-livereload"' &amp;gt;&amp;gt; Gemfile
+&lt;/code&gt;&lt;/pre&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>middleman - design umsetzen</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2014/02/03/middleman-frontend-development.html"/>
+    <id>http://blog.url.com/blog/2014/02/03/middleman-frontend-development.html</id>
+    <published>2014-02-03T00:00:00Z</published>
+    <updated>2014-02-06T22:45:47+01:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Andre hat mir ein Design geschickt, dass ich jetzt prototypisch in HTML und CSS umsetze. &lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="PSD" src="/images/andres-design.png" /&gt;&lt;/p&gt;
+
+&lt;h2 id="struktur"&gt;Struktur&lt;/h2&gt;
+
+&lt;p&gt;Zuerst wird die Vorlage grob unterteilt. Es gibt einen Header mit Logo, eine Navigation, eine Liste mit Teasern und einen Footer. Als Liste: &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;header
+  h1 
+  h2
+nav
+section
+  article
+  article
+footer
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In ein &lt;a href="http://slim-lang.com"&gt;Slim&lt;/a&gt;-Tempalte gegossen. Erstmal wurde hier die Datei &lt;code&gt;source/layouts/layout.html.slim&lt;/code&gt; missbraucht. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;doctype html
+html
+  head
+    meta charset="utf-8"
+    meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'
+    title Prototype
+  body
+    .container
+    header
+      h1 the webworkers blog
+      h2 Developer / Frontend-Developer / Webdesigner / Nerds
+    nav
+      ul
+        li
+          a href="#" Blog
+        li
+          a href="#" Über uns
+        li
+          a href="#" Projekte
+        li
+          a href="#" Kontakt
+    #main
+      section
+       - 5.times
+        article
+          header 2014 — Rückblick. Vorausschau. Whatever. Preview
+          p Da ist es wieder, das neue Jahr und die Leute da draußen nehmen
+          footer
+            .author André Borges
+            time{pubdate date="2014-12-24"} 24.12.2014
+        article
+    footer
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="design"&gt;Design&lt;/h2&gt;
+
+&lt;p&gt;Anstatt CSS direkt zu schreiben, wird &lt;a href="http://sass-lang.com"&gt;SASS&lt;/a&gt; via &lt;a href="http://compass-style.org"&gt;compass&lt;/a&gt; genutzt. Middleman konvertiert SASS Dateien on-the-fly. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;touch source/stylesheets/style.css.scss
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="reset--normalize"&gt;Reset / Normalize&lt;/h3&gt;
+
+&lt;p&gt;Für das CSS wird &lt;a href="https://github.com/necolas/normalize.css/blob/master/normalize.css"&gt;normalize.css&lt;/a&gt; statt eines klassischen CSS-Reset genutzt. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir source/stylesheets/vendor
+cd source/stylesheets/vendor
+wget https://raw.github.com/necolas/normalize.css/master/normalize.css
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In unserem SCSS sieht es dann so aus: &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cat screen.css.scss
+ // import normalize https://raw.github.com/necolas/normalize.css/master/normalize.css
+@import 'vendor/normalize';
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Im Browser sieht es jetzt so aus. 
+&lt;img alt="Seite mit normalize" src="/images/2014-02-03_html-normalize.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;In die Gemfile gem "compass-normalize-plugin"&lt;/p&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>middleman - slim template</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2014/02/02/middleman-slim.html"/>
+    <id>http://blog.url.com/blog/2014/02/02/middleman-slim.html</id>
+    <published>2014-02-02T00:00:00Z</published>
+    <updated>2014-02-06T22:29:43+01:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h1 id="slim---schicke-schlanke-template-engine"&gt;Slim - schicke schlanke Template-Engine&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="http://slim-lang.com"&gt;Slim&lt;/a&gt; ist ein Template-Engine, die versucht die häufig sperrige Syntax zu vereinfachen; Spritzeklammern, schliessende Tags, ade. &lt;/p&gt;
+
+&lt;p&gt;Middleman unterstüzt via &lt;code&gt;tilt&lt;/code&gt; u.a. auch Slim &lt;a href="http://middlemanapp.com/basics/templates/#toc_9"&gt;http://middlemanapp.com/basics/templates/#toc_9&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;Allerdings muss Middleman einmal im Gemfile und zum anderen in der config.rb bescheid geben, dass man Slim nutzen will. Das geht so …&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo 'gem "slim"' &amp;gt;&amp;gt; Gemfile
+
+sed -i.$(date -u +"%Y-%m-%dT%lH:%M:%S") '1{x;s/$/require "slim"/;G;}' config.rb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="standard-layouterb-ersetzten"&gt;Standard layout.erb ersetzten&lt;/h2&gt;
+
+&lt;p&gt;Die erb dient erstmal als Vorlagen; das Original wird gesichert. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp source/layouts/layout.erb source/layouts/layout.html.slim
+mv source/layouts/layout.erb source/layouts/original.layout.erb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nach ein der Umwandlung sieht das Layout jetzt so aus: &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;doctype html
+html
+  head
+    meta charset="utf-8"
+    meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'
+    title Blog Title #{'- ' + current_article.title unless current_article.nil?}
+    = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
+  body
+    #main role="main"
+      == yield    
+    aside
+      h2 Recent Articles
+      ol
+        - blog.articles[0...10].each do |article| 
+          li = link_to article.title
+            span = article.date.strftime('%b %e')
+      h2 Tags
+      ol
+        - blog.tags.each do |tag, articles| 
+          li 
+              = link_to tag, tag_path(tag) 
+              |  (
+              = articles.size
+              | )
+      h2 By Year
+      ol
+        - blog.articles.group_by {|a| a.date.year }.each do |year, articles| 
+          li 
+            = link_to year, blog_year_path(year) 
+            |  (
+            = articles.size
+            | )
+&lt;/code&gt;&lt;/pre&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>Middleman - Setup</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2014/02/02/middleman-setup.html"/>
+    <id>http://blog.url.com/blog/2014/02/02/middleman-setup.html</id>
+    <published>2014-02-02T00:00:00Z</published>
+    <updated>2014-02-06T22:29:39+01:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h1 id="middleman---entwicklungsumgebung-in-wenigen-schritten"&gt;Middleman - Entwicklungsumgebung in wenigen Schritten&lt;/h1&gt;
+
+&lt;p&gt;Für die Frontend Entwicklung gibt es mittlerweile viele großartige Tools. Mein aktueller Favorit ist Middleman; bietet SASS, Compass, Erb, Haml, Slim, Coffeescript, … und Blogging … und und und. &lt;/p&gt;
+
+&lt;p&gt;Mit dem Standard Setup kommt man sehr schnell nach vorne.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gem install middleman
+gem install middleman-blog
+middleman init prototype --template=blog
+cd prototype
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Obige Befehle haben folgende Struktur angelegt. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ tree -F
+.
+├── Gemfile
+├── Gemfile.lock
+├── config.rb
+└── source/
+    ├── 2012-01-01-example-article.html.markdown
+    ├── calendar.html.erb
+    ├── feed.xml.builder
+    ├── images/
+    ├── index.html.erb
+    ├── javascripts/
+    ├── layout.erb
+    ├── stylesheets/
+    └── tag.html.erb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Wie man hier sieht gibt es eine Konfigurationsdatei &lt;code&gt;config.rb&lt;/code&gt; und ein Arbeitsordner &lt;code&gt;soruce/&lt;/code&gt;. &lt;/p&gt;
+
+&lt;h2 id="start"&gt;Start&lt;/h2&gt;
+
+&lt;p&gt;Mit &lt;code&gt;middleman&lt;/code&gt; kann ein lokaler Webserver gestartet werden, der auf lokal auf Port 4567 erreichbar ist &lt;a href="http://localhost:4567/"&gt;http://localhost:4567/&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="first start" src="/images/2014-02-03_mm001.png" /&gt;&lt;/p&gt;
+
+&lt;h2 id="anpassungen"&gt;Anpassungen&lt;/h2&gt;
+
+&lt;p&gt;Wie häufig kann man mit wenigen Anpassungen noch mehr aus Dingen herausholen. Ich werde in den nächsten Posts einige Standards anpassen und ihre Funktion dabei beschreiben. &lt;/p&gt;
+
+&lt;p&gt;Wen interessiert was gerade geladen ist, kann unter &lt;a href="http://localhost:4567/__middleman/"&gt;http://localhost:4567/__middleman/&lt;/a&gt; nachschauen. &lt;/p&gt;
+
+</content>
+  </entry>
+</feed>

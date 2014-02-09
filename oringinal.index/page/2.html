@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge;chrome=1" http-equiv="X-UA-Compatible" />
+    <title>Prototype</title><link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="banner">
+        <h1><a href="/">
+          the <span class="web">web</span><span class="workers">workers</span> blog</a>
+        </h1>
+        <h2>
+          Developer / Frontend-Developer / Webdesigner / Nerds
+        </h2>
+      </header>
+      <div id="main">
+        <nav class="mainnavigation">
+          <ul>
+            <li>
+              <a class="active" href="/blog">Blog</a>
+            </li>
+            <li>
+              <a href="/about.html">Über uns</a>
+            </li>
+            <li>
+              <a href="/projects.html">Projekte</a>
+            </li>
+            <li>
+              <a href="/contact.html">Kontakt</a>
+            </li>
+          </ul>
+        </nav>
+        <section>  <p>Page 2 of 3</p>
+
+  
+    <p><a href="/oringinal.index.html">Previous page</a></p>
+  
+
+  <h2><a href="/blog/2014/02/03/middleman-frontend-development.html">middleman - design umsetzen</a> <span>Feb  3</span></h2>
+  <!-- use article.summary(250) if you have Nokogiri available to show just
+       the first 250 characters -->
+  <p>Andre hat mir ein Design geschickt, dass ich jetzt prototypisch in HTML und CSS umsetze. </p>
+
+<p><img alt="PSD" src="/images/andres-design.png" /></p>
+
+<h2 id="struktur">Struktur</h2>
+
+<p>Zuerst wird die Vorlage grob unterteilt. Es gibt einen Header mit Logo, eine Navigation, eine Liste mit Teasern und einen Footer. Als Liste: </p>
+
+<pre><code>header
+  h1 
+  h2
+nav
+section
+  article
+  article
+footer
+</code></pre>
+
+<p>In ein <a href="http://slim-lang.com">Slim</a>-Tempalte gegossen. Erstmal wurde hier die Datei <code>source/layouts/layout.html.slim</code> missbraucht. </p>
+
+<pre><code>doctype html
+html
+  head
+    meta charset="utf-8"
+    meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'
+    title Prototype
+  body
+    .container
+    header
+      h1 the webworkers blog
+      h2 Developer / Frontend-Developer / Webdesigner / Nerds
+    nav
+      ul
+        li
+          a href="#" Blog
+        li
+          a href="#" Über uns
+        li
+          a href="#" Projekte
+        li
+          a href="#" Kontakt
+    #main
+      section
+       - 5.times
+        article
+          header 2014 — Rückblick. Vorausschau. Whatever. Preview
+          p Da ist es wieder, das neue Jahr und die Leute da draußen nehmen
+          footer
+            .author André Borges
+            time{pubdate date="2014-12-24"} 24.12.2014
+        article
+    footer
+</code></pre>
+
+<h2 id="design">Design</h2>
+
+<p>Anstatt CSS direkt zu schreiben, wird <a href="http://sass-lang.com">SASS</a> via <a href="http://compass-style.org">compass</a> genutzt. Middleman konvertiert SASS Dateien on-the-fly. </p>
+
+<pre><code>touch source/stylesheets/style.css.scss
+</code></pre>
+
+<h3 id="reset--normalize">Reset / Normalize</h3>
+
+<p>Für das CSS wird <a href="https://github.com/necolas/normalize.css/blob/master/normalize.css">normalize.css</a> statt eines klassischen CSS-Reset genutzt. </p>
+
+<pre><code>mkdir source/stylesheets/vendor
+cd source/stylesheets/vendor
+wget https://raw.github.com/necolas/normalize.css/master/normalize.css
+</code></pre>
+
+<p>In unserem SCSS sieht es dann so aus: </p>
+
+<pre><code>$ cat screen.css.scss
+ // import normalize https://raw.github.com/necolas/normalize.css/master/normalize.css
+@import 'vendor/normalize';
+</code></pre>
+
+<p>Im Browser sieht es jetzt so aus. 
+<img alt="Seite mit normalize" src="/images/2014-02-03_html-normalize.png" /></p>
+
+<p>In die Gemfile gem "compass-normalize-plugin"</p>
+
+
+  <h2><a href="/blog/2014/02/02/middleman-slim.html">middleman - slim template</a> <span>Feb  2</span></h2>
+  <!-- use article.summary(250) if you have Nokogiri available to show just
+       the first 250 characters -->
+  <h1 id="slim---schicke-schlanke-template-engine">Slim - schicke schlanke Template-Engine</h1>
+
+<p><a href="http://slim-lang.com">Slim</a> ist ein Template-Engine, die versucht die häufig sperrige Syntax zu vereinfachen; Spritzeklammern, schliessende Tags, ade. </p>
+
+<p>Middleman unterstüzt via <code>tilt</code> u.a. auch Slim <a href="http://middlemanapp.com/basics/templates/#toc_9">http://middlemanapp.com/basics/templates/#toc_9</a>. </p>
+
+<p>Allerdings muss Middleman einmal im Gemfile und zum anderen in der config.rb bescheid geben, dass man Slim nutzen will. Das geht so …</p>
+
+<pre><code>echo 'gem "slim"' &gt;&gt; Gemfile
+
+sed -i.$(date -u +"%Y-%m-%dT%lH:%M:%S") '1{x;s/$/require "slim"/;G;}' config.rb
+</code></pre>
+
+<h2 id="standard-layouterb-ersetzten">Standard layout.erb ersetzten</h2>
+
+<p>Die erb dient erstmal als Vorlagen; das Original wird gesichert. </p>
+
+<pre><code>cp source/layouts/layout.erb source/layouts/layout.html.slim
+mv source/layouts/layout.erb source/layouts/original.layout.erb
+</code></pre>
+
+<p>Nach ein der Umwandlung sieht das Layout jetzt so aus: </p>
+
+<pre><code>doctype html
+html
+  head
+    meta charset="utf-8"
+    meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'
+    title Blog Title #{'- ' + current_article.title unless current_article.nil?}
+    = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
+  body
+    #main role="main"
+      == yield    
+    aside
+      h2 Recent Articles
+      ol
+        - blog.articles[0...10].each do |article| 
+          li = link_to article.title
+            span = article.date.strftime('%b %e')
+      h2 Tags
+      ol
+        - blog.tags.each do |tag, articles| 
+          li 
+              = link_to tag, tag_path(tag) 
+              |  (
+              = articles.size
+              | )
+      h2 By Year
+      ol
+        - blog.articles.group_by {|a| a.date.year }.each do |year, articles| 
+          li 
+            = link_to year, blog_year_path(year) 
+            |  (
+            = articles.size
+            | )
+</code></pre>
+
+
+  <h2><a href="/blog/2014/02/02/middleman-setup.html">Middleman - Setup</a> <span>Feb  2</span></h2>
+  <!-- use article.summary(250) if you have Nokogiri available to show just
+       the first 250 characters -->
+  <h1 id="middleman---entwicklungsumgebung-in-wenigen-schritten">Middleman - Entwicklungsumgebung in wenigen Schritten</h1>
+
+<p>Für die Frontend Entwicklung gibt es mittlerweile viele großartige Tools. Mein aktueller Favorit ist Middleman; bietet SASS, Compass, Erb, Haml, Slim, Coffeescript, … und Blogging … und und und. </p>
+
+<p>Mit dem Standard Setup kommt man sehr schnell nach vorne.</p>
+
+<pre><code>gem install middleman
+gem install middleman-blog
+middleman init prototype --template=blog
+cd prototype
+</code></pre>
+
+<p>Obige Befehle haben folgende Struktur angelegt. </p>
+
+<pre><code>$ tree -F
+.
+├── Gemfile
+├── Gemfile.lock
+├── config.rb
+└── source/
+    ├── 2012-01-01-example-article.html.markdown
+    ├── calendar.html.erb
+    ├── feed.xml.builder
+    ├── images/
+    ├── index.html.erb
+    ├── javascripts/
+    ├── layout.erb
+    ├── stylesheets/
+    └── tag.html.erb
+</code></pre>
+
+<p>Wie man hier sieht gibt es eine Konfigurationsdatei <code>config.rb</code> und ein Arbeitsordner <code>soruce/</code>. </p>
+
+<h2 id="start">Start</h2>
+
+<p>Mit <code>middleman</code> kann ein lokaler Webserver gestartet werden, der auf lokal auf Port 4567 erreichbar ist <a href="http://localhost:4567/">http://localhost:4567/</a>. </p>
+
+<p><img alt="first start" src="/images/2014-02-03_mm001.png" /></p>
+
+<h2 id="anpassungen">Anpassungen</h2>
+
+<p>Wie häufig kann man mit wenigen Anpassungen noch mehr aus Dingen herausholen. Ich werde in den nächsten Posts einige Standards anpassen und ihre Funktion dabei beschreiben. </p>
+
+<p>Wen interessiert was gerade geladen ist, kann unter <a href="http://localhost:4567/__middleman/">http://localhost:4567/__middleman/</a> nachschauen. </p>
+
+
+
+  
+    <p><a href="/oringinal.index/page/3.html">Next page</a></p>
+  
+
+        </section>
+      </div>
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="copy">
+            © 2014 thewebworker
+          </div>
+          <div class="rights">
+            All rights reserved.
+          </div>
+          <div class="made">
+            Made in Germany 
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

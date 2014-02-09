@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8" />
+  <meta content="IE=edge;chrome=1" http-equiv="X-UA-Compatible" />
+  <title>Prototype</title><link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
+  <body>
+    <div class="container">
+      <header class="banner">
+        <h1><a href="/">
+          the <span class="web">web</span><span class="workers">workers</span> blog</a>
+        </h1>
+        <h2>
+          Developer / Frontend-Developer / Webdesigner / Nerds
+        </h2>
+      </header>
+      <div id="main">
+        <nav class="mainnavigation">
+          <ul>
+            <li>
+              <a class="active" href="/blog">Blog</a>
+            </li>
+            <li>
+              <a href="/about.html">Über uns</a>
+            </li>
+            <li>
+              <a href="/projects.html">Projekte</a>
+            </li>
+            <li>
+              <a href="/contact.html">Kontakt</a>
+            </li>
+          </ul>
+        </nav>
+        <section>
+          <article><h1 id="introduction">Introduction</h1>
+
+<p>As I  add increasing numbers  of features to  MultiMarkdown, I decided  it was
+time to create  a sample document to  show them off. Many of  the features are
+demonstrated in the <a title="MultiMarkdown User's Guide" href="http://fletcherpenney.net/mmd/users_guide/">MultiMarkdown User's Guide</a>, but some are not.</p>
+
+<p>Additionally,  it's easy  for those  features to  get lost  within all  of the
+technical  documentation.  This document  is  designed  to <em>demonstrate</em>,  not
+describe, most of the features of MultiMarkdown.</p>
+
+<h1 id="how-to-use-this-document">How to Use This Document</h1>
+
+<p>I suggest comparing  the raw text source with the  various final outputs (e.g.
+HTML, LaTeX,  PDF, OpenDocument)  in order  to see  what can  be accomplished.
+There  will be  many  similarities  between output  formats,  but  also a  few
+differences. Tables will end up in different places. Paragraphs won't break in
+the same way. But these differences are superficial and are a result of trying
+to optimize  each format,  without regard to  identical output  across formats
+(which would be virtually impossible).</p>
+
+<p>Remember, the main goal of Markdown\MultiMarkdown  is to allow you to create a
+document in  plain text,  with minimal  distraction from  markup, that  can be
+transformed into a variety of high quality outputs. Or, to quote John Gruber:</p>
+
+<blockquote>
+  <p>The overriding design goal for Markdown's formatting syntax is to make it as
+readable as possible. The idea is that a Markdown-formatted document should be
+publishable as-is,  as plain text,  without looking  like it's been  marked up
+with  tags  or  formatting  instructions. While  Markdown's  syntax  has  been
+influenced by several existing text-to-HTML filters, the single biggest source
+of  inspiration   for  Markdown's   syntax  is  the   format  of   plain  text
+email.<a href="John%20Gruber.%20%20Daring%20Fireball:%20Markdown.%20[Cited%20January%202006].">#Gruber</a></p>
+</blockquote>
+
+<p>Available from <a href="http://daringfireball.net/projects/markdown/">http://daringfireball.net/projects/markdown/</a>.</p>
+
+<h1 id="where-can-i-get-a-copy">Where Can I Get a Copy?</h1>
+
+<p>You can download a zipfile containing multiple formats of this document:</p>
+
+<ul>
+  <li><a href="http://fletcher.github.com/MultiMarkdown-Gallery">MultiMarkdown-Gallery</a></li>
+</ul>
+
+<p>This file includes:</p>
+
+<ul>
+  <li>A plain text file in MultiMarkdown format</li>
+  <li>A Scrivener file</li>
+  <li>An HTML file</li>
+  <li>A PDF</li>
+  <li>An OpenDocument file</li>
+  <li>An OPML</li>
+  <li>A LaTeX file</li>
+  <li>And the included images</li>
+</ul>
+
+<p>All files were generated automatically from the MultiMarkdown source document.</p>
+
+<h1 id="so-what-can-this-document-demonstrate">So, What Can This Document Demonstrate?</h1>
+
+<h2 id="metadata">Metadata</h2>
+
+<p>First, take  a look  at the  overall structure  of the  document. At  the very
+beginning  is  metadata,  including   a  title,  author,  keywords,  copyright
+information, etc.  Where possible,  this metadata is  put to  appropriate use,
+otherwise it is  stored in a format  designed to be easily  read and minimally
+distracting:</p>
+
+<ul>
+  <li>
+    <p>In plain text and XHTML snippets<sup id="fnref:snippets"><a href="#fn:snippets" class="footnote">1</a></sup>, it is located at the top of the
+document.</p>
+  </li>
+  <li>
+    <p>In a full XHTML document, is located in the <code>&lt;head&gt;</code> section, and the title
+and CSS metadata, if present, are used appropriately.</p>
+  </li>
+  <li>
+    <p>In a PDF generated from my XSLT files, metadata is used to generate the
+appropriate fields (title, author, keywords) in the PDF itself. Some PDF
+readers will let you examine this data. Additionally, the title, subtitle,
+author, and copyright are placed at the beginning of the document.</p>
+  </li>
+  <li>
+    <p>In a Scrivener document, you can put the metadata in the first File in the
+Binder, but the preferred location is in the "MultiMarkdown Settings…"
+pane (in the File Menu.)</p>
+  </li>
+</ul>
+
+<p>There are a lot of standard metadata keys  that can be used, or you can create
+your own and use them as you see fit. Definitely a powerful feature.</p>
+
+<h2 id="structure">Structure</h2>
+
+<p>The next thing  to look at is  the overall structure of the  document. You can
+visualize  a Markdown  document as  an  outline, with  different sections  and
+different levels within those sections. Based on your output format, these can
+be used to generate headers, or sections,  or even chapters. It's all based on
+what tools you use to process the XHTML output.</p>
+
+<p>Even within the XHTML document, however, you can make use of this structure to
+allow  easy navigation  within  the document.  You can  link  directly to  the
+[Introduction][] (and to [][Introduction] when using LaTeX), for instance. And
+if you are creating  a PDF, it will contain a hierarchy  of section names that
+you  can use  to  allow easy  navigation,  if your  PDF  reader supports  this
+function.</p>
+
+<h2 id="footnotes">Footnotes</h2>
+
+<p>Footnotes are  very easy to  implement in  MultiMarkdown, as described  in the
+MultiMarkdown Syntax Guide.<sup id="fnref:somesamplefootnote"><a href="#fn:somesamplefootnote" class="footnote">2</a></sup></p>
+
+<h2 id="fence-code-block">Fence Code Block</h2>
+
+<pre><code>code block in here
+$foo
+</code></pre>
+
+<h2 id="tables">Tables</h2>
+
+<p>Tables  can be  quite useful  for  showing data  in  a meaningful  way. As  an
+example, here is a table comparing [MultiMarkdown vs. Crayons][].</p>
+
+<p>[This is a caption with <em>italics</em>][MultiMarkdown vs. Crayons]  </p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Features</th>
+      <th style="text-align: center">MultiMarkdown</th>
+      <th style="text-align: center">Crayons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Melts in warm places</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td>Mistakes can be easily fixed</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">No</td>
+    </tr>
+    <tr>
+      <td>Easy to copy documents for friends</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">No</td>
+    </tr>
+    <tr>
+      <td>Fun at parties</td>
+      <td style="text-align: center">No<sup id="fnref:parties"><a href="#fn:parties" class="footnote">3</a></sup></td>
+      <td style="text-align: center">Why not?</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Minimum markup for maximum quality?</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The following table is the 1st col left, 2nd centered and 3rd right aligned.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Features</th>
+      <th style="text-align: center">MultiMarkdown</th>
+      <th style="text-align: right">Crayons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Left algined text</td>
+      <td style="text-align: center">chunky</td>
+      <td style="text-align: right">0,99 €</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">this, too</td>
+      <td style="text-align: center">bacon</td>
+      <td style="text-align: right">9.49 €</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="typographical-conventions">Typographical conventions</h2>
+
+<p>By incorporating John Gruber's <a href="http://daringfireball.net/projects/smartypants/">SmartyPants</a> program into your workflow, you
+can generate more  "correct" typographic punction in your XHTML  pages, and in
+your  LaTeX source  if  you are  generating PDF's—this  includes  en and  em
+dashes, and ellipses….</p>
+
+<p>Very nice when you want to focus on writing, not grammar.</p>
+
+<h2 id="image-support">Image Support</h2>
+
+<p>If you choose to incorporate images in your documents, this can be easily done
+as well. MultiMarkdown  makes it easier to link to  images and include various
+attributes.</p>
+
+<p>As   an  example,   here  is   an  image   from  my   website  —   <a href="#nautilusstar">Nautilus
+Star</a>. If you  have a local copy of the  image, you can include
+the image in a pdf.</p>
+
+<p><img alt="This is a **bolded** caption" title="Nautilus Star&quot; width=&quot;3in&quot; height=&quot;2.4in" src="/images/upload.png" /></p>
+
+<h2 id="bibliography-support">Bibliography Support</h2>
+
+<p>MultiMarkdown offers  several mechanisms  for managing bibliographies.  It has
+built-in  support   for  basic   citation  and  bibliography   management  and
+formatting, or you  can rely on external  tools to handle this  for you. There
+aren't  many  citations in  this  document,  but I  think  it  gets the  point
+across.<a href="John%20Doe.%20*A%20Totally%20Fake%20Book*.%20%20Vanity%20Press,%202006.">p. 42</a>
+{.alert}</p>
+
+<h2 id="glossary-support">Glossary Support</h2>
+
+<p>MultiMarkdown  has  a  special  format for  footnotes  that  should  represent
+glossary terms. This  doesn't make much difference in XHTML  (because there is
+no such thing as a glossary in XHTML),  but can be used to generate a glossary
+within LaTeX documents.</p>
+
+<p>For example,  let's have  an entry for  <code>glossary</code>.<sup id="fnref:glossary"><a href="#fn:glossary" class="footnote">4</a></sup> And  what about
+ampersands?<sup id="fnref:amp"><a href="#fn:amp" class="footnote">5</a></sup></p>
+
+<p>Since we  want the ampersand  entry to  be sorted with  the a's, and  not with
+symbols, we put in the optional sort key <code>ampersand</code> to control sorting.</p>
+
+<pre><code>[^glossary]: glossary: Glossary 
+    A section at the end ...
+    
+[^amp]: glossary: &amp; (ampersand)
+    A punctuation mark ...
+</code></pre>
+
+<h2 id="math-support">Math Support</h2>
+
+<p>It's pretty easy to include mathematical equations:</p>
+
+<p>\[ {e}^{i\pi }+1=0 \]</p>
+
+<p>\[ {x}_{1,2}=\frac{-b\pm \sqrt{{b}^{2}-4ac}}{2a} \]</p>
+
+<p>You can also include formulas within a sentence, such as
+\({x}^{2}+{y}^{2}=1\).</p>
+
+<h1 id="now-what">Now What?</h1>
+
+<p>Get out there and try it. Let me know what you think. Let me know what doesn't
+work. Let me know what you think is missing.</p>
+
+<p>In other words, help me make it better!</p>
+
+<p>You can get more information on my web site:</p>
+
+<ul>
+  <li><a href="http://fletcherpenney.net/multimarkdown">http://fletcherpenney.net/multimarkdown</a></li>
+</ul>
+
+<p>You can also:</p>
+
+<ul>
+  <li>
+    <p>Email me:<br />
+  <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#111;&#119;&#110;&#101;&#114;&#064;&#102;&#108;&#101;&#116;&#099;&#104;&#101;&#114;&#112;&#101;&#110;&#110;&#101;&#121;&#046;&#110;&#101;&#116;">&#111;&#119;&#110;&#101;&#114;&#064;&#102;&#108;&#101;&#116;&#099;&#104;&#101;&#114;&#112;&#101;&#110;&#110;&#101;&#121;&#046;&#110;&#101;&#116;</a></p>
+  </li>
+  <li>
+    <p>Join the MultiMarkdown discussion list:<br />
+  <a href="http://groups.google.com/group/multimarkdown">http://groups.google.com/group/multimarkdown</a></p>
+  </li>
+  <li>
+    <p>Join the Markdown discussion list:<br />
+  <a href="http://six.pairlist.net/mailman/listinfo/markdown-discuss">http://six.pairlist.net/mailman/listinfo/markdown-discuss</a></p>
+  </li>
+</ul>
+<div class="footnotes">
+  <ol>
+    <li id="fn:snippets">
+      <p>An XHTML  snippet is my terminology for XHTML  code that does not include the <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and  <code>&lt;body&gt;</code> tags. Most browsers will display it  properly, but  it is  not a  complete XHTML  document. Without  a <code>&lt;head&gt;</code> section there is nowhere to put metadata(e.g. there is no <code>&lt;title&gt;</code>). <a href="#fnref:snippets" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:somesamplefootnote">
+      <p>Here is the text of the footnote itself. <a href="#fnref:somesamplefootnote" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:parties">
+      <p>I guess it depends on what kind of parties you go to… <a href="#fnref:parties" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:glossary">
+      <p>glossary: Glossary 
+A section at the end … <a href="#fnref:glossary" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:amp">
+      <p>glossary: &amp; (ampersand)
+A punctuation mark … <a href="#fnref:amp" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+          </article>
+        </section>
+      </div>
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="copy">
+            © 2014 thewebworker
+          </div>
+          <div class="rights">
+            All rights reserved.
+          </div>
+          <div class="made">
+            Made in Germany 
+          </div>
+        </div>some text
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8" />
+  <meta content="IE=edge;chrome=1" http-equiv="X-UA-Compatible" />
+  <title>Prototype</title><link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
+  <body>
+    <div class="container">
+      <header class="banner">
+        <h1><a href="/">
+          the <span class="web">web</span><span class="workers">workers</span> blog</a>
+        </h1>
+        <h2>
+          Developer / Frontend-Developer / Webdesigner / Nerds
+        </h2>
+      </header>
+      <div id="main">
+        <nav class="mainnavigation">
+          <ul>
+            <li>
+              <a class="active" href="/blog">Blog</a>
+            </li>
+            <li>
+              <a href="/about.html">Über uns</a>
+            </li>
+            <li>
+              <a href="/projects.html">Projekte</a>
+            </li>
+            <li>
+              <a href="/contact.html">Kontakt</a>
+            </li>
+          </ul>
+        </nav>
+        <section>
+          <article><h1 id="live-reload">Live Reload</h1>
+
+<p><a href="http://livereload.com/">http://livereload.com/</a> refreshed den Browser, sobald Änderungen an den Sourcen gemacht wurden. </p>
+
+<p>Zur Aktivierung muss lediglich das Kommentar <code>#</code> in der entsprechende Zeile in der <code>config.rb</code> entfernt werden. </p>
+
+<p>Hier in 3 Schritten CLI.</p>
+
+<pre><code>$ grep -A1 -B1 livereload config.rb
+# Reload the browser automatically whenever files change
+# activate :livereload
+$ sed -i.$(date -u +"%Y-%m-%dT%H:%M:%S") '/# activate :livereload/s/^#//' config.rb
+$ grep -A1 -B1 livereload config.rb
+# Reload the browser automatically whenever files change
+ activate :livereload
+</code></pre>
+
+<p>Damit <code>middleman</code> LiveReload findet, muss das <code>Gemfile</code> entsprechend ergänzt werden. </p>
+
+<pre><code>echo 'gem "middleman-livereload"' &gt;&gt; Gemfile
+</code></pre>
+
+
+          </article>
+        </section>
+      </div>
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="copy">
+            © 2014 thewebworker
+          </div>
+          <div class="rights">
+            All rights reserved.
+          </div>
+          <div class="made">
+            Made in Germany 
+          </div>
+        </div>some text
+      </footer>
+    </div>
+  </body>
+</html>

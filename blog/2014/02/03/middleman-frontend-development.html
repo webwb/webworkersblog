@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8" />
+  <meta content="IE=edge;chrome=1" http-equiv="X-UA-Compatible" />
+  <title>Prototype</title><link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
+  <body>
+    <div class="container">
+      <header class="banner">
+        <h1><a href="/">
+          the <span class="web">web</span><span class="workers">workers</span> blog</a>
+        </h1>
+        <h2>
+          Developer / Frontend-Developer / Webdesigner / Nerds
+        </h2>
+      </header>
+      <div id="main">
+        <nav class="mainnavigation">
+          <ul>
+            <li>
+              <a class="active" href="/blog">Blog</a>
+            </li>
+            <li>
+              <a href="/about.html">Über uns</a>
+            </li>
+            <li>
+              <a href="/projects.html">Projekte</a>
+            </li>
+            <li>
+              <a href="/contact.html">Kontakt</a>
+            </li>
+          </ul>
+        </nav>
+        <section>
+          <article><p>Andre hat mir ein Design geschickt, dass ich jetzt prototypisch in HTML und CSS umsetze. </p>
+
+<p><img alt="PSD" src="/images/andres-design.png" /></p>
+
+<h2 id="struktur">Struktur</h2>
+
+<p>Zuerst wird die Vorlage grob unterteilt. Es gibt einen Header mit Logo, eine Navigation, eine Liste mit Teasern und einen Footer. Als Liste: </p>
+
+<pre><code>header
+  h1 
+  h2
+nav
+section
+  article
+  article
+footer
+</code></pre>
+
+<p>In ein <a href="http://slim-lang.com">Slim</a>-Tempalte gegossen. Erstmal wurde hier die Datei <code>source/layouts/layout.html.slim</code> missbraucht. </p>
+
+<pre><code>doctype html
+html
+  head
+    meta charset="utf-8"
+    meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'
+    title Prototype
+  body
+    .container
+    header
+      h1 the webworkers blog
+      h2 Developer / Frontend-Developer / Webdesigner / Nerds
+    nav
+      ul
+        li
+          a href="#" Blog
+        li
+          a href="#" Über uns
+        li
+          a href="#" Projekte
+        li
+          a href="#" Kontakt
+    #main
+      section
+       - 5.times
+        article
+          header 2014 — Rückblick. Vorausschau. Whatever. Preview
+          p Da ist es wieder, das neue Jahr und die Leute da draußen nehmen
+          footer
+            .author André Borges
+            time{pubdate date="2014-12-24"} 24.12.2014
+        article
+    footer
+</code></pre>
+
+<h2 id="design">Design</h2>
+
+<p>Anstatt CSS direkt zu schreiben, wird <a href="http://sass-lang.com">SASS</a> via <a href="http://compass-style.org">compass</a> genutzt. Middleman konvertiert SASS Dateien on-the-fly. </p>
+
+<pre><code>touch source/stylesheets/style.css.scss
+</code></pre>
+
+<h3 id="reset--normalize">Reset / Normalize</h3>
+
+<p>Für das CSS wird <a href="https://github.com/necolas/normalize.css/blob/master/normalize.css">normalize.css</a> statt eines klassischen CSS-Reset genutzt. </p>
+
+<pre><code>mkdir source/stylesheets/vendor
+cd source/stylesheets/vendor
+wget https://raw.github.com/necolas/normalize.css/master/normalize.css
+</code></pre>
+
+<p>In unserem SCSS sieht es dann so aus: </p>
+
+<pre><code>$ cat screen.css.scss
+ // import normalize https://raw.github.com/necolas/normalize.css/master/normalize.css
+@import 'vendor/normalize';
+</code></pre>
+
+<p>Im Browser sieht es jetzt so aus. 
+<img alt="Seite mit normalize" src="/images/2014-02-03_html-normalize.png" /></p>
+
+<p>In die Gemfile gem "compass-normalize-plugin"</p>
+
+
+          </article>
+        </section>
+      </div>
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="copy">
+            © 2014 thewebworker
+          </div>
+          <div class="rights">
+            All rights reserved.
+          </div>
+          <div class="made">
+            Made in Germany 
+          </div>
+        </div>some text
+      </footer>
+    </div>
+  </body>
+</html>

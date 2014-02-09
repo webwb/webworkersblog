@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge;chrome=1" http-equiv="X-UA-Compatible" />
+    <title>Prototype</title><link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="banner">
+        <h1><a href="/">
+          the <span class="web">web</span><span class="workers">workers</span> blog</a>
+        </h1>
+        <h2>
+          Developer / Frontend-Developer / Webdesigner / Nerds
+        </h2>
+      </header>
+      <div id="main">
+        <nav class="mainnavigation">
+          <ul>
+            <li>
+              <a class="active" href="/blog">Blog</a>
+            </li>
+            <li>
+              <a href="/about.html">Über uns</a>
+            </li>
+            <li>
+              <a href="/projects.html">Projekte</a>
+            </li>
+            <li>
+              <a href="/contact.html">Kontakt</a>
+            </li>
+          </ul>
+        </nav>
+        <section><p>
+  Page 1 of 1
+</p>
+<article class="clearfix">
+  <div class="article-header">
+    <h2>
+      <a href="/blog/2014/02/09/multimarkdown-test-page.html">Multimarkdown Tests</a>
+    </h2>
+    <time datetime="2014-02-09">February  9, 2014</time>
+    <ul class="article-tags">
+      <li>
+        <a href="/blog/tags/markdown.html">markdown</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article-body">
+    <h1 id="introduction">Introduction</h1>
+    
+    <p>As I  add increasing numbers  of features to  MultiMarkdown, I decided  it was
+    time to create  a sample document to  show them off. Many of  the features are
+    demonstrated in the <a title="MultiMarkdown User's Guide" href="http://fletcherpenney.net/mmd/users_guide/">MultiMarkdown User's Guide</a>, but some are not.</p>
+    
+    <p>Additionally,  it's easy  for those  features to  get lost...</p>
+  </div>
+  <p class="more btn font-family-serif">
+    <a href="/blog/2014/02/09/multimarkdown-test-page.html">Read more</a>
+  </p>
+</article>
+<article class="clearfix">
+  <div class="article-header">
+    <h2>
+      <a href="/blog/2014/02/07/theother-pages.html">Middleman - Setting us the root pages</a>
+    </h2>
+    <time datetime="2014-02-07">February  7, 2014</time>
+    <ul class="article-tags">
+      <li>
+        <a href="/blog/tags/middleman.html">middleman</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article-body">
+    <p>The main navigation targets are still not set. Doing this, now. </p>
+    
+    <ul>
+      <li><a href="/about.html">Über uns</a></li>
+      <li><a href="/projects/">Projekte</a></li>
+      <li><a href="/contact/">Kontakt</a></li>
+    </ul>
+    
+    
+  </div>
+  <p class="more btn font-family-serif">
+    <a href="/blog/2014/02/07/theother-pages.html">Read more</a>
+  </p>
+</article>
+<article class="clearfix">
+  <div class="article-header">
+    <h2>
+      <a href="/blog/2014/02/06/middleman-sample.html">Middleman - Live Reload</a>
+    </h2>
+    <time datetime="2014-02-06">February  6, 2014</time>
+    <ul class="article-tags">
+      <li>
+        <a href="/blog/tags/middleman.html">middleman</a>
+      </li>
+      <li>
+        <a href="/blog/tags/livereload.html">livereload</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article-body"><p><a href="http://livereload.com/">Livereload</a> refreshed den Browser sobald Änderungen an den Sourcen gespeichert werden. </p>
+
+<p>Zur Aktivierung muss in <code>config.rb</code> lediglich das Kommentar (<code>#</code>) in der folgenden Zeile entfernt werden. </p>
+
+<pre><code># activate :livereload
+</code></pre>
+
+<p>Hier in per <code>sed</code>: </p>
+
+<pre><code>$ grep -A1 -B1 livereload config.rb
+# Reload the browser automatically...</code></pre>
+  </div>
+  <p class="more btn font-family-serif">
+    <a href="/blog/2014/02/06/middleman-sample.html">Read more</a>
+  </p>
+</article>
+<article class="clearfix">
+  <div class="article-header">
+    <h2>
+      <a href="/blog/2014/02/03/middleman-frontend-development.html">middleman - design umsetzen</a>
+    </h2>
+    <time datetime="2014-02-03">February  3, 2014</time>
+    <ul class="article-tags">
+      <li>
+        <a href="/blog/tags/middleman.html">middleman</a>
+      </li>
+      <li>
+        <a href="/blog/tags/slim.html">slim</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article-body"><p>Andre hat mir ein Design geschickt, dass ich jetzt prototypisch in HTML und CSS umsetze. </p>
+
+<p><img alt="PSD" src="/images/andres-design.png"></p>
+
+<h2 id="struktur">Struktur</h2>
+
+<p>Zuerst wird die Vorlage grob unterteilt. Es gibt einen Header mit Logo, eine Navigation, eine Liste mit Teasern und einen Footer. Als Liste: </p>
+
+<pre><code>header
+  h1 
+  h2
+nav
+section
+  article
+  article
+footer...</code></pre>
+  </div>
+  <p class="more btn font-family-serif">
+    <a href="/blog/2014/02/03/middleman-frontend-development.html">Read more</a>
+  </p>
+</article>
+<article class="clearfix">
+  <div class="article-header">
+    <h2>
+      <a href="/blog/2014/02/02/middleman-slim.html">middleman - slim template</a>
+    </h2>
+    <time datetime="2014-02-02">February  2, 2014</time>
+    <ul class="article-tags">
+      <li>
+        <a href="/blog/tags/middleman.html">middleman</a>
+      </li>
+      <li>
+        <a href="/blog/tags/slim.html">slim</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article-body"><h1 id="slim---schicke-schlanke-template-engine">Slim - schicke schlanke Template-Engine</h1>
+
+<p><a href="http://slim-lang.com">Slim</a> ist ein Template-Engine, die versucht die häufig sperrige Syntax zu vereinfachen; Spritzeklammern, schliessende Tags, ade. </p>
+
+<p>Middleman unterstüzt via <code>tilt</code> u.a. auch Slim <a href="http://middlemanapp.com/basics/templates/#toc_9">http://middlemanapp.com/basics/templates/#toc_9</a>. </p>
+
+<p>Allerdings muss Middleman einmal...</p>
+  </div>
+  <p class="more btn font-family-serif">
+    <a href="/blog/2014/02/02/middleman-slim.html">Read more</a>
+  </p>
+</article>
+<article class="clearfix">
+  <div class="article-header">
+    <h2>
+      <a href="/blog/2014/02/02/middleman-setup.html">Middleman - Setup</a>
+    </h2>
+    <time datetime="2014-02-02">February  2, 2014</time>
+    <ul class="article-tags">
+      <li>
+        <a href="/blog/tags/middleman.html">middleman</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article-body">
+    <h1 id="middleman---entwicklungsumgebung-in-wenigen-schritten">Middleman - Entwicklungsumgebung in wenigen Schritten</h1>
+    
+    <p>Für die Frontend Entwicklung gibt es mittlerweile viele großartige Tools. Mein aktueller Favorit ist Middleman; bietet SASS, Compass, Erb, Haml, Slim, Coffeescript, … und Blogging … und und und. </p>
+    
+    <p>Mit dem Standard Setup kommt man sehr schnell...</p>
+  </div>
+  <p class="more btn font-family-serif">
+    <a href="/blog/2014/02/02/middleman-setup.html">Read more</a>
+  </p>
+</article>
+<article class="clearfix">
+  <div class="article-header">
+    <h2>
+      <a href="/blog/2014/02/02/middleman-livereload.html">Middleman - LiveReload</a>
+    </h2>
+    <time datetime="2014-02-02">February  2, 2014</time>
+    <ul class="article-tags">
+      <li>
+        <a href="/blog/tags/middleman.html">middleman</a>
+      </li>
+      <li>
+        <a href="/blog/tags/livereload.html">livereload</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article-body"><h1 id="live-reload">Live Reload</h1>
+
+<p><a href="http://livereload.com/">http://livereload.com/</a> refreshed den Browser, sobald Änderungen an den Sourcen gemacht wurden. </p>
+
+<p>Zur Aktivierung muss lediglich das Kommentar <code>#</code> in der entsprechende Zeile in der <code>config.rb</code> entfernt werden. </p>
+
+<p>Hier in 3 Schritten CLI.</p>
+
+<pre><code>$ grep -A1 -B1 livereload config.rb
+# Reload the browser...</code></pre>
+  </div>
+  <p class="more btn font-family-serif">
+    <a href="/blog/2014/02/02/middleman-livereload.html">Read more</a>
+  </p>
+</article>
+<article class="clearfix">
+  <div class="article-header">
+    <h2>
+      <a href="/blog/2014/02/02/middleman-layouts.html">Middleman - Layout</a>
+    </h2>
+    <time datetime="2014-02-02">February  2, 2014</time>
+    <ul class="article-tags">
+      <li>
+        <a href="/blog/tags/middleman.html">middleman</a>
+      </li>
+      <li>
+        <a href="/blog/tags/layouts.html">layouts</a>
+      </li>
+      <li>
+        <a href="/blog/tags/partials.html">partials</a>
+      </li>
+      <li>
+        <a href="/blog/tags/blog.html">blog</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article-body"><h1 id="middleman---ordnung-schaffen">Middleman - Ordnung schaffen</h1>
+
+<h2 id="layouts">Layouts</h2>
+
+<p>Die Standard-Installation hat das Layout in <code>source</code> erstellt. Middleman akzeptiert jedoch auch Layouts in <code>source/layouts</code> zu haben. Zwecks Ordnung erstellen wir den Ordner und verschieben die Datei. </p>
+
+<pre><code>mkdir source/layouts
+mv source/layout.erb source/layouts
+</code></pre>
+
+
+  </div>
+  <p class="more btn font-family-serif">
+    <a href="/blog/2014/02/02/middleman-layouts.html">Read more</a>
+  </p>
+</article>
+        </section>
+      </div>
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="copy">
+            © 2014 thewebworker
+          </div>
+          <div class="rights">
+            All rights reserved.
+          </div>
+          <div class="made">
+            Made in Germany 
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
