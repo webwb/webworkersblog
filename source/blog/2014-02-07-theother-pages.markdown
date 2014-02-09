@@ -6,3 +6,8 @@ tags: [middleman]
 
 The main navigation targets are still not set. Doing this, now. 
 
+- [Über uns](/about.html)
+- [Projekte](/projects/)
+- [Kontakt](/contact/)
+
+
