@@ -1,0 +1,25 @@
+
+- page_articles.each_with_index do |article, i|
+  article
+    header
+      h2 = link_to article.date.strftime('%d.%m. - ') + " " + article.title, article
+      = article.summary
+    footer
+      - if article.tags 
+        ul.article-tags
+          - article.tags.each do |tag|
+            li
+              = link_to tag, tag_path(tag)
+      = link_to 'mehr lesen', article, :class => "more"
+      time datetime = article.date.strftime('%Y-%m-%d') = article.date.strftime(', %2d.%m.%Y |') 
+      .author André Borges 
+
+- if paginate
+  .pagination
+    - if prev_page
+      = link_to 'Neuere Beiträge', prev_page, :class => "newer"
+      span.newer < 
+    - if next_page
+      = link_to 'Ältere Beiträge', next_page, :class => "older"
+      - if next_page
+        span.older >

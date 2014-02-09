@@ -1,17 +1,16 @@
 ---
-title: Middleman - Sample 01
+title: Middleman - Live Reload
 date: 2014-02-06
 tags: [middleman, livereload]
 ---
 
-# Live Reload
+[Livereload](http://livereload.com/) refreshed den Browser sobald Änderungen an den Sourcen gespeichert werden. 
 
-[http://livereload.com/](http://livereload.com/) refreshed den Browser, sobald Änderungen an den Sourcen gemacht wurden. 
+Zur Aktivierung muss in `config.rb` lediglich das Kommentar (`#`) in der folgenden Zeile entfernt werden. 
 
-Zur Aktivierung muss lediglich das Kommentar `#` in der entsprechende Zeile in der `config.rb` entfernt werden. 
+    # activate :livereload
 
-
-Hier in 3 Schritten CLI.
+Hier in per `sed`: 
 
     $ grep -A1 -B1 livereload config.rb
     # Reload the browser automatically whenever files change
