@@ -5,7 +5,9 @@
 	text-align: center;
 	@include text-shadow(2px 2px 5px #aaaaaa);
 	font-family: $lucida-font-family;
-	h1 {
+
+	h1 { font-size: 16px;}
+	a {
 		font-size: 1.7em;
 		letter-spacing:-3px;
 		color:white;
@@ -15,6 +17,7 @@
 		.workers {
 			color:$gelb;
 		}
+		&:hover { text-decoration: none;}
 	}
 	h2 {
 		font-size: 1em;
