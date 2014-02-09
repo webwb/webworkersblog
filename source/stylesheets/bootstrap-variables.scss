@@ -11,11 +11,15 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-//$gray-darker:            lighten(#000, 13.5%) !default; // #222
-//$gray-dark:              lighten(#000, 20%) !default;   // #333
-//$gray:                   lighten(#000, 33.5%) !default; // #555
-//$gray-light:             lighten(#000, 60%) !default;   // #999
-//$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
+// Changing grey to custom color. Since I only have to text color
+// I need to convert gray-dark to gray, by darken my color by 20%
+$custom-gray-substitue-color: darken(#6899b5, 20); 
+
+$gray-darker:            lighten($custom-gray-substitue-color, 13.5%) !default; // #222
+$gray-dark:              lighten($custom-gray-substitue-color, 20%) !default;   // #333
+$gray:                   lighten($custom-gray-substitue-color, 33.5%) !default; // #555
+$gray-light:             lighten($custom-gray-substitue-color, 40%) !default;   // #999
+$gray-lighter:           lighten($custom-gray-substitue-color, 59%) !default; // #eee
 
 //$brand-primary:         #428bca !default;
 //$brand-success:         #5cb85c !default;
@@ -43,13 +47,13 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-//$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  Arial, sans-serif !default;
 //$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 //$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 //$font-family-base:        $font-family-sans-serif !default;
 
-//$font-size-base:          14px !default;
+$font-size-base:          16px !default;
 //$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 //$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 

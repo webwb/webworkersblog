@@ -1,23 +1,51 @@
 
 
-@import "compass/reset";
 // custom bootstrap variables
-
-@import "_bootstrap_variables";
+@import "compass/reset";
+@import "bootstrap-variables";
 @import "bootstrap-custom";
 @import "compass";
 @import "susy";
 
 
 
+
+// Custom Styles from the beginning. 
+// They should be minized step by step.
 $gelb: #fecf2f;
 $header-bg: #96c8df; // blau
 $header-sub-text: #aedcf1;
-$text: #6899b5;
 $footer-bg: #ddebf2;
 $footer-text: #85a7bb;
-
+// Font used in banner
 $lucida-font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
+
+//-----------------------------------------------------------------------------
+// Custom Mixins
+@mixin hover-btn-unhover {
+	padding: 5px 8px;
+	border: 2px #6899b5 solid;
+	font-weight: bold;
+	border-radius: 5px;
+	color: #6899b5;
+	font-size: 0.8em;
+	text-decoration: none;
+}
+@mixin hover-btn-hover {
+	border: 2px transparent solid;
+	background: #6899b5;
+	color:white;
+}
+@mixin hover-btn {
+	@include hover-btn-unhover;
+	&:hover { @include hover-btn-hover; }
+}
+
+
+
+
+@import "banner";
+@import "text";
 
 //-----------------------------------------------------------------------------
 // Grid Settings
@@ -34,41 +62,7 @@ $break          : 12;
 // Layout
 
 
-body {
-	// background: white;
-	font-family: Arial, sans-serif;
-	color: $text;
-}
 
-img {
-	max-width: 90%;
-	border:1px #aedcf1 solid;	 
-}
-
-.pageheader {
-	// @include span-columns(7 omega);
-	width: 100%;
-	padding: 100px 0 ;
-	background: $header-bg;
-	text-align: center;
-	@include text-shadow(2px 2px 5px #aaaaaa);
-	font-family: $lucida-font-family;
-	h1 {
-		font-size: 1.7em;
-		letter-spacing:-3px;
-		color:white;
-		span {
-  			font-size: 2.0em;
-		}
-		.workers {
-			color:$gelb;
-		}
-	}
-	h2 {
-		font-size: 1em;
-		color:$header-sub-text;
-	}
-}
 
 .mainnavigation { 
 	top: -60px;
@@ -109,71 +103,13 @@ img {
   }
 }
 
-@mixin hover-btn-unhover {
-	padding: 5px 8px;
-	border: 2px #6899b5 solid;
-	font-weight: bold;
-	border-radius: 5px;
-	color: #6899b5;
-	font-size: 0.8em;
-	text-decoration: none;
-}
-@mixin hover-btn-hover {
-	border: 2px transparent solid;
-	background: #6899b5;
-	color:white;
-}
-@mixin hover-btn {
-	@include hover-btn-unhover;
-	&:hover { @include hover-btn-hover; }
-}
+
 #main {
 	@include container($total-columns, $break);
 	@include establish-baseline;
 	section {
 		// @include span-columns(7 omega);
-		article {
-			@include span-columns(7 omega);
-			border-top: 4px $gelb solid;
-			padding-top: 2em;
-			header h2 a {
-				font-size: 1.2em;
-				font-weight: bold;
-				padding-bottom: 1em;
-				color: #6899b5;
-				text-decoration: none;
-				display: block;
-			}
-			footer {
-				// @include clearfix;
-				color: #b3c9d6;
-				padding: 1.5em 0 3.5em;
-				ul { display:inline;
-					float: left;
-					li {
-						display: inline-block;
-						a {
-							color: #b3c9d6;
-							text-decoration: none;
-						}
-					}
-				}
-				.author, time {
-					float:right;
-					display: inline;
-					font-size: 0.9em;
-				}
-				.more {
-					float:right;
-					@include hover-btn;
-					display: inline-block;
-					margin-left: 2px;
-					margin-left: 7px;
-					top: -7px;
-					position: relative;
-				}
-			}
-		}		
+
 	}
 }
 

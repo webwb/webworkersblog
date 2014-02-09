@@ -1,0 +1,85 @@
+
+article {
+	// Links
+	a {	font-weight: bold;}
+	// make all images responsive
+	img {
+		max-width: 100%;
+		height: auto;
+		@extend .thumbnail;
+	}
+	// Lists
+	ol {
+	  list-style: outside decimal;
+	  padding-left: 2.5em;
+	}
+	ul {
+		list-style: disc inside none;
+		margin-bottom: 1.5em;
+	}
+	// Code Preformatted
+	pre,
+	pre code {	
+	 overflow: auto;
+ 	 word-wrap: normal;
+ 	 white-space: pre;
+	}
+	blockquote {
+		font-family: $font-family-serif;
+		font-style: italic;
+	}
+	// Tables
+	table {
+		@extend .table; //  bootstrap
+		@extend .table-hover; // bootstrap
+		@extend .table-striped; // bootstrap
+		> thead > tr > th { 
+			border-bottom-width: 3px; 
+			font-weight: bold;
+		}
+	}
+
+	// Yellow line above the article
+	border-top: 6px $gelb solid;
+	// Article's Headline
+	header a,
+	header a:hover { 
+			text-decoration: none;
+			cursor: pointer;
+			color: #6899b5;
+		h2 {
+			font-weight: bold;
+			font-size: 1.6em;
+		}
+	}
+	footer {
+		// @include clearfix;
+		color: #b3c9d6;
+		padding: 1.5em 0 5em;
+		ul { display:inline;
+			float: left;
+			li {
+				display: inline-block;
+				a {
+					color: #b3c9d6;
+					text-decoration: none;
+				}
+			}
+		}
+		.author, 
+		time {
+			float:right;
+			display: inline;
+			font-size: 0.9em;
+		}
+		.more {
+			float:right;
+			@include hover-btn;
+			display: inline-block;
+			margin-left: 2px;
+			margin-left: 7px;
+			top: -7px;
+			position: relative;
+		}
+	}
+}		

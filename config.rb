@@ -3,8 +3,8 @@ require 'susy'
 require 'bootstrap-sass'
 # Set slim-lang output style
 Slim::Engine.set_default_options :pretty => true
-
-
+set :markdown_engine, :kramdown 
+set :kramdown,  :smartypants => true
 ###
 # Blog settings
 ###
@@ -19,7 +19,7 @@ activate :blog do |blog|
   # Matcher for blog source files
   # blog.sources = "{year}-{month}-{day}-{title}.html"
   # blog.taglink = "tags/{tag}.html"
-  # blog.layout = "layout"
+  blog.layout = "layout"
   # blog.summary_separator = /READMORE/
   blog.summary_length = 300
   # blog.year_link = "{year}.html"
@@ -37,6 +37,8 @@ activate :blog do |blog|
 end
 
 page "/feed.xml", layout: false
+page "/blog/*", layout: "post"
+
 
 ###
 # Compass
