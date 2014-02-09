@@ -6,7 +6,9 @@
 	@include text-shadow(2px 2px 5px #aaaaaa);
 	font-family: $lucida-font-family;
 
-	h1 { font-size: 16px;}
+	h1 { 
+		font-size: 16px;
+		margin-bottom: 0;}
 	a {
 		font-size: 1.7em;
 		letter-spacing:-3px;
@@ -20,7 +22,8 @@
 		&:hover { text-decoration: none;}
 	}
 	h2 {
-		font-size: 1em;
+		font-size: 13px;
 		color:$header-sub-text;
+		margin-top: 0;
 	}
 }
