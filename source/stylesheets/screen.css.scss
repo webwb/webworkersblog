@@ -20,32 +20,13 @@ $footer-text: #85a7bb;
 // Font used in banner
 $lucida-font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
 
-//-----------------------------------------------------------------------------
-// Custom Mixins
-@mixin hover-btn-unhover {
-	padding: 5px 8px;
-	border: 2px #6899b5 solid;
-	font-weight: bold;
-	border-radius: 5px;
-	color: #6899b5;
-	font-size: 0.8em;
-	text-decoration: none;
-}
-@mixin hover-btn-hover {
-	border: 2px transparent solid;
-	background: #6899b5;
-	color:white;
-}
-@mixin hover-btn {
-	@include hover-btn-unhover;
-	&:hover { @include hover-btn-hover; }
-}
 
 
-
-
+@import "mixins";
 @import "banner";
+@import "mainnavigation";
 @import "text";
+@import "footer";
 
 //-----------------------------------------------------------------------------
 // Grid Settings
@@ -64,44 +45,6 @@ $break          : 12;
 
 
 
-.mainnavigation { 
-	top: -60px;
-	left:-2px; // will be added by a's border.
-	position: relative;
-	text-align: justify; 
-	padding: 0;
-	ul { 
-		display:inline; 
-		margin:0;
-		li { display:inline-block; 
-			a { display:inline-block; 
-			}
-		}
-	}
-	&:after {
-  		content: '';
-  		width: 100%; /* Ensures there are at least 2 lines of text, so justification works */
-  		display: inline-block;
-	}	
-}
-
-
-
-.mainnavigation ul li a {
-  @include unstyled-link;
- 		margin: 2px;
- 		padding: 4px;
- 		color:white;
-  &.active {
-  		border-bottom: 2px $gelb solid;
-  		margin-bottom: 0;
-  }
-  &:hover { 
-  	@include border-radius;
-  	 	border: 2px white solid;
- 		margin: 0;
-  }
-}
 
 
 #main {
@@ -132,21 +75,6 @@ $break          : 12;
 	}
 }
 
-.footer { 
-	background: $footer-bg;
-	color:$footer-text;
-	padding:2em 0;
-	margin-top: 3em;
-	// @include clearfix;
-	}
 .footer-content {
 	@include container($total-columns, $break);
-	padding-bottom: 10em;
-	.copy {
-		font-weight: bold;
-		line-height: 2em;
-	}
-	.rights, .made { font-size: .8em;}
-
 }
-

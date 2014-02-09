@@ -1,0 +1,39 @@
+
+.mainnavigation { 
+	top: -60px;
+	left:-2px; // will be added by a's border.
+	position: relative;
+	text-align: justify; 
+	padding: 0;
+	ul { 
+		display:inline; 
+		margin:0;
+		li { display:inline-block; 
+			a { display:inline-block; 
+			}
+		}
+	}
+	&:after {
+  		content: '';
+  		width: 100%; /* Ensures there are at least 2 lines of text, so justification works */
+  		display: inline-block;
+	}	
+}
+
+
+
+.mainnavigation ul li a {
+  @include unstyled-link;
+ 		margin: 2px;
+ 		padding: 4px;
+ 		color:white;
+  &.active {
+  		border-bottom: 2px $gelb solid;
+  		margin-bottom: 0;
+  }
+  &:hover { 
+  	@include border-radius;
+  	 	border: 2px white solid;
+ 		margin: 0;
+  }
+}
