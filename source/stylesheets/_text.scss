@@ -1,5 +1,4 @@
-
-article {
+section {
 	// Links
 	a {	font-weight: bold;}
 	// make all images responsive
@@ -19,7 +18,7 @@ article {
 	}
 	// Code Preformatted
 	pre,
-	pre code {	
+	pre code {
 	 overflow: auto;
  	 word-wrap: normal;
  	 white-space: pre;
