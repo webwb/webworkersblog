@@ -20,12 +20,21 @@ $footer-text: #85a7bb;
 // Font used in banner
 $lucida-font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
 
-
+// $blue: #94c8e0;
+// $color2: #92c6de;
+// $dark-blue: #8bbfd7;
+// $color4: #90c4dc;
+// $color5: #ffffff;
+// $color6: #f8fafc;
+// $yellow: #ffd000;
+// $light-blue: #ddebf2:
 
 @import "mixins";
 @import "banner";
 @import "mainnavigation";
 @import "text";
+@import "aside";
+@import "pagination";
 @import "footer";
 
 //-----------------------------------------------------------------------------
@@ -41,9 +50,17 @@ $break          : 12;
 
 //-----------------------------------------------------------------------------
 // Layout
-
-
-
+// 
+// Structure
+// body
+// 	.container
+// 		header.banner 			< width:100%
+// 		#main 					< 7/7 
+// 			nav
+// 			section
+// 			aside
+// 		footer
+// 			.footer-content
 
 
 
@@ -58,21 +75,6 @@ $break          : 12;
 
 .pagination {
 	@include span-columns(7 omega);
-	padding: 3em 0 2em;
-	a { 
-		@include hover-btn-unhover; 
-		@include hover-btn-hover; 
-		position: relative;
-		&.newer { float:left; }
-		&.older { float:right; }
-	}
-	span {
-		position: relative;
-		line-height: 2em;
-		color: #6899b5;
-		&.newer { left:-8.42em; float: left; }
-		&.older { right:-8.1em; float: right;}
-	}
 }
 
 .footer-content {

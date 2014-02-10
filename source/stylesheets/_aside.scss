@@ -1,0 +1,42 @@
+aside { 
+	section.taglisting { 
+
+		h1 {
+			span {
+				font-size: 1em;
+				line-height: 2em;
+				width: 3em;
+				text-align: right;
+				float: left;
+				vertical-align: baseline;
+				right: 15px;
+			}
+				font-size: 1em;
+				line-height: 2em;
+				font-weight: bold;
+				float: left;
+				width: 100%;
+				border-bottom: 6px #96C8DF solid;
+		}
+		.tag-link { 
+			border-bottom: 1px lighten(#b3c9d6,10%) solid;
+			line-height: 2em;
+			.count {
+				float: left;
+				width: 3em;
+				text-align: right;
+				padding-right: 1em;
+
+			}
+			.name {
+
+				a {
+					font-weight: normal;
+					@include unstyled-link;
+					text-transform: capitalize;
+
+				}
+			}
+		}
+	}
+}

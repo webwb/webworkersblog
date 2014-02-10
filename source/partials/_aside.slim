@@ -1,0 +1,17 @@
+---
+pageable: true
+per_page: 12
+---
+aside
+	section.taglisting
+		h1 
+			span.glyphicon.glyphicon-tag 
+			| Beiträge nach Kategorie
+
+		- blog.tags.sort.each do | tag, articles |
+			.tag-link
+				.count = articles.size().to_s
+				.name 
+					| <a href="/blog/tags/#{tag}/">#{tag}</a>
+
+

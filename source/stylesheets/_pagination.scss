@@ -1,0 +1,18 @@
+.pagination {
+	@include span-columns(7 omega);
+	padding: 3em 0 2em;
+	a { 
+		@include hover-btn-unhover; 
+		@include hover-btn-hover; 
+		position: relative;
+		&.newer { float:left; }
+		&.older { float:right; }
+	}
+	span {
+		position: relative;
+		line-height: 2em;
+		color: #6899b5;
+		&.newer { left:-8.42em; float: left; }
+		&.older { right:-8.1em; float: right;}
+	}
+}
