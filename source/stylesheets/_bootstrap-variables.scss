@@ -21,7 +21,7 @@ $gray:                   lighten($custom-gray-substitue-color, 33.5%) !default; 
 $gray-light:             lighten($custom-gray-substitue-color, 40%) !default;   // #999
 $gray-lighter:           lighten($custom-gray-substitue-color, 59%) !default; // #eee
 
-//$brand-primary:         #428bca !default;
+$brand-primary:         $gray-dark;
 //$brand-success:         #5cb85c !default;
 //$brand-info:            #5bc0de !default;
 //$brand-warning:         #f0ad4e !default;
@@ -35,12 +35,12 @@ $gray-lighter:           lighten($custom-gray-substitue-color, 59%) !default; //
 //** Background color for `<body>`.
 //$body-bg:               #fff !default;
 //** Global text color on `<body>`.
-//$text-color:            $gray-dark !default;
+$text-color:            $gray-dark;
 
 //** Global textual link color.
-//$link-color:            $brand-primary !default;
+$link-color:            $brand-primary;
 //** Link hover color set via `darken()` function.
-//$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-color:      darken($link-color, 10%);
 
 
 //== Typography
@@ -53,16 +53,16 @@ $font-family-sans-serif:  Arial, sans-serif !default;
 //$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 //$font-family-base:        $font-family-sans-serif !default;
 
-$font-size-base:          16px !default;
+$font-size-base:          14px !default;
 //$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 //$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 
-//$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
-//$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
-//$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
-//$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
-//$font-size-h5:            $font-size-base !default;
-//$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-h1:            floor(($font-size-base * 2.15)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
 
 //** Unit-less `line-height` for use in components like buttons.
 // $line-height-base:        1.5;
@@ -71,7 +71,7 @@ $font-size-base:          16px !default;
 
 //** By default, this inherits from the `<body>`.
 //$headings-font-family:    inherit !default;
-//$headings-font-weight:    500 !default;
+$headings-font-weight:    700 !default;
 //$headings-line-height:    1.1 !default;
 //$headings-color:          inherit !default;
 
@@ -103,9 +103,9 @@ $font-size-base:          16px !default;
 //$line-height-large:         1.33 !default;
 //$line-height-small:         1.5 !default;
 
-//$border-radius-base:        4px !default;
+$border-radius-base:        2px !default;
 //$border-radius-large:       6px !default;
-//$border-radius-small:       3px !default;
+$border-radius-small:       1px !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
 //$component-active-color:    #fff !default;

@@ -4,9 +4,13 @@ per_page: 12
 ---
 aside
 	section.taglisting
-		h1 
-			span.glyphicon.glyphicon-tag 
-			| Beiträge nach Kategorie
+		.tag-link.aside-header
+			.count 
+				span.glyphicon.glyphicon-tag
+			.name Beiträge nach Kategorie
+		/ h1 
+		/ 	span.glyphicon.glyphicon-tag 
+		/ 	| Beiträge nach Kategorie
 
 		- blog.tags.sort.each do | tag, articles |
 			.tag-link

@@ -19,6 +19,83 @@ describe, most of the features of MultiMarkdown.
 [MultiMarkdown User's Guide]: http://fletcherpenney.net/mmd/users_guide/
   "MultiMarkdown User's Guide"
 
+## Heading Tests
+
+I suggest comparing  the raw text source with the  various final outputs (e.g.
+HTML, LaTeX,  PDF, OpenDocument)  in order  to see  what can  be accomplished.
+There  will be  many  similarities  between output  formats,  but  also a  few
+differences. Tables will end up in different places.
+
+Now headings next to each other
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+##### Heading 5
+
+###### Heading 6 
+
+### Now with some text around. 
+
+I suggest comparing  the raw text source with the  various final outputs (e.g.
+HTML, LaTeX,  PDF, OpenDocument)  in order  to see  what can  be accomplished.
+There  will be  many  similarities  between output  formats,  but  also a  few
+differences. Tables will end up in different places.
+
+# Heading 1
+
+I suggest comparing  the raw text source with the  various final outputs (e.g.
+HTML, LaTeX,  PDF, OpenDocument)  in order  to see  what can  be accomplished.
+There  will be  many  similarities  between output  formats,  but  also a  few
+differences. Tables will end up in different places.
+
+## Heading 2
+
+I suggest comparing  the raw text source with the  various final outputs (e.g.
+HTML, LaTeX,  PDF, OpenDocument)  in order  to see  what can  be accomplished.
+There  will be  many  similarities  between output  formats,  but  also a  few
+differences. Tables will end up in different places.
+
+### Heading 3
+
+I suggest comparing  the raw text source with the  various final outputs (e.g.
+HTML, LaTeX,  PDF, OpenDocument)  in order  to see  what can  be accomplished.
+There  will be  many  similarities  between output  formats,  but  also a  few
+differences. Tables will end up in different places.
+
+#### Heading 4
+
+I suggest comparing  the raw text source with the  various final outputs (e.g.
+HTML, LaTeX,  PDF, OpenDocument)  in order  to see  what can  be accomplished.
+There  will be  many  similarities  between output  formats,  but  also a  few
+differences. Tables will end up in different places.
+
+##### Heading 5
+
+I suggest comparing  the raw text source with the  various final outputs (e.g.
+HTML, LaTeX,  PDF, OpenDocument)  in order  to see  what can  be accomplished.
+There  will be  many  similarities  between output  formats,  but  also a  few
+differences. Tables will end up in different places.
+
+###### Heading 6
+
+I suggest comparing  the raw text source with the  various final outputs (e.g.
+HTML, LaTeX,  PDF, OpenDocument)  in order  to see  what can  be accomplished.
+There  will be  many  similarities  between output  formats,  but  also a  few
+differences. Tables will end up in different places.
+
+## Numbered List
+
+1. entry
+2. entry
+3. entry
+4. non entry
+5. entry
 
 # How to Use This Document #
 

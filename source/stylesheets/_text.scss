@@ -15,6 +15,7 @@ section {
 	ul {
 		list-style: disc inside none;
 		margin-bottom: 1.5em;
+		padding-left: 1em;
 	}
 	// Code Preformatted
 	pre,
@@ -37,7 +38,11 @@ section {
 			font-weight: bold;
 		}
 	}
+}
+// -------------------------------
+// LAYOUT
 
+section > article {
 	// Yellow line above the article
 	border-top: 6px $gelb solid;
 	// Article's Headline

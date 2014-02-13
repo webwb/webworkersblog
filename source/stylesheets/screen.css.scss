@@ -30,6 +30,7 @@ $lucida-font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verd
 // $light-blue: #ddebf2:
 
 @import "mixins";
+@import "magic-grid";
 @import "banner";
 @import "mainnavigation";
 @import "text";
@@ -37,46 +38,6 @@ $lucida-font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verd
 @import "pagination";
 @import "footer";
 
-//-----------------------------------------------------------------------------
-// Grid Settings
-// @include border-box-sizing;
-
-$total-columns  : 7;
-$column-width   : 4em;
-$gutter-width   : 1em;
-$grid-padding   : $gutter-width;
-
-$break          : 12;
-
-//-----------------------------------------------------------------------------
-// Layout
-// 
-// Structure
-// body
-// 	.container
-// 		header.banner 			< width:100%
-// 		#main 					< 7/7 
-// 			nav
-// 			section
-// 			aside
-// 		footer
-// 			.footer-content
 
 
 
-#main {
-	@include container($total-columns, $break);
-	@include establish-baseline;
-	section {
-		// @include span-columns(7 omega);
-
-	}
-}
-
-.pagination {
-	@include span-columns(7 omega);
-}
-
-.footer-content {
-	@include container($total-columns, $break);
-}

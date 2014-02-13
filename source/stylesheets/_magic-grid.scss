@@ -1,0 +1,86 @@
+
+//-----------------------------------------------------------------------------
+// Layout
+// 
+// doctype html
+// html
+//   head
+//     == partial "htmlhead"
+//   body
+//     .container
+//       header.banner
+//         == partial "banner"
+//       #main
+//         nav.mainnavigation
+//           == partial "mainnavigation"
+//         section
+//           = yield
+//         == partial "aside"
+//       footer.footer
+//             == partial "footer"
+
+//-----------------------------------------------------------------------------
+// Grid Settings
+// @include border-box-sizing;
+
+
+// minimal with 480px
+$total-columns  : 9;
+$column-width   : 4em;
+$gutter-width   : 1em;
+$grid-padding   : $gutter-width;
+
+$medium-columns : 10; // 944px
+$large-columns  : 16;  
+
+// Debug Grid
+// #main {
+//   @include susy-grid-background;
+//   @include at-breakpoint($medium-columns) { @include susy-grid-background; }
+//   @include at-breakpoint($large-columns) { @include susy-grid-background; }
+// }
+
+#main {
+	@include container;
+	@include establish-baseline;
+	// Nothing need to be styled to everything is in the flow
+
+	// Layout
+
+	@include at-breakpoint($medium-columns) {
+  		> nav { 
+  			@include squish(1,1,$medium-columns); 
+  			@include span-columns(8);
+  		}
+	  	> section {
+	  		@include span-columns(6);
+	  	}
+	  	aside {
+	  		@include span-columns(4 omega);
+	  	}
+	}
+}
+  // .main {
+  //   $main-columns: 10;
+  //   @include span-columns($main-columns omega, $medium-columns);
+  //   .content { @include span-columns(7,$main-columns) }
+  //   .summary { @include span-columns(3 omega, $main-columns) }
+  // }
+
+
+
+aside {}
+
+.pagination {
+	@include span-columns(7 omega);
+}
+
+.footer-content {
+	
+}
+
+// when the layout gets too large
+@include at-breakpoint($medium-columns) {
+    
+}
+
