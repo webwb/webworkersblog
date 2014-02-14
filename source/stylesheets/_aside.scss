@@ -1,7 +1,9 @@
 aside { 
-	section.taglisting { 
+	section { 
+		margin-bottom: 2em;
 		.tag-link.aside-header {
 			border-bottom: 6px #96C8DF solid;
+			margin-bottom: 0.5em;
 			line-height: 2em;
 			font-weight: bold;
 		}
@@ -25,6 +27,29 @@ aside {
 					text-transform: capitalize;
 
 				}
+			}
+		}
+		.profile {
+			@include clearfix;
+			border-bottom: 1px lighten(#b3c9d6,10%) solid;
+			line-height: 2em;
+			margin-bottom: 1em;
+			padding:.5em 0;
+			img {
+				@include border-radius(50%);
+				border:2px lighten(#b3c9d6,10%) solid;
+				height: 4.5em;
+				width: 4.5em;
+				float:right;
+				margin-right: 1.5em;
+			}
+			.author, 
+			.postcount {
+				padding-left: 2em;
+			}
+			.postcount {
+				// font-size: .8em;
+
 			}
 		}
 	}

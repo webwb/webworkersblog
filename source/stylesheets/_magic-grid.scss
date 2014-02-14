@@ -25,41 +25,87 @@
 
 
 // minimal with 480px
-$total-columns  : 9;
-$column-width   : 4em;
-$gutter-width   : 1em;
+$total-columns  : 5;             // 70pm
+$column-width   : 4.285714286em; // 60px
+$gutter-width   : 1.25em;        // 20px
 $grid-padding   : $gutter-width;
 
-$medium-columns : 10; // 944px
-$large-columns  : 16;  
+$small-columns	: 7;
+$medium-columns : 9; // 944px
+$large-columns  : 12;  
+
+$container-style: magic;
+$container-width: 82em;
 
 // Debug Grid
-// #main {
-//   @include susy-grid-background;
-//   @include at-breakpoint($medium-columns) { @include susy-grid-background; }
-//   @include at-breakpoint($large-columns) { @include susy-grid-background; }
-// }
+#main {
+  @include susy-grid-background;
+  @include at-breakpoint($small-columns) { @include susy-grid-background; }
+  @include at-breakpoint($medium-columns) { @include susy-grid-background; }
+  @include at-breakpoint($large-columns) { @include susy-grid-background; }
+}
 
 #main {
 	@include container;
 	@include establish-baseline;
-	// Nothing need to be styled to everything is in the flow
 
-	// Layout
+	@include at-breakpoint($small-columns) {
+	  // @include with-grid-settings(7,$column-width,2em,10em) {
+		@include set-container-width;
+		> nav { 
+			width:540px;
+			margin:0 auto;
+		}
+		aside {
+			@include span-columns(7 omega);
+			section.taglisting  {
+				@include span-columns(3);
+				@include post(1);
+			}
+			section.profiles {
+				@include span-columns(3 omega);
+			}
+		}
+	  // }
+	}
 
+	// Layout @medium
 	@include at-breakpoint($medium-columns) {
-  		> nav { 
-  			@include squish(1,1,$medium-columns); 
-  			@include span-columns(8);
-  		}
+			@include set-container-width;
+			// @include with-grid-settings(12,4em,1.5em,1em) // $gutter-width   : 60px;
+			// @include container;
+		  	> section {
+		  		@include span-columns(6);
+		  	}
+		  	aside {
+		  		@include span-columns(3 omega);
+		  		section.taglisting  {
+	  				width:100%;
+	  			}
+	  			section.profiles {
+	  				width:100%;
+	  				// @include span-columns(6 omega);
+	  			}
+		  	}
+	}
+	// Layout @large
+	@include at-breakpoint($large-columns) {
+		@include set-container-width;
 	  	> section {
 	  		@include span-columns(6);
 	  	}
 	  	aside {
-	  		@include span-columns(4 omega);
+	  		@include span-columns(6 omega);
+	  		section.taglisting  {
+  				@include span-columns(3,6);
+  			}
+  			section.profiles {
+  				@include span-columns(3 omega,6);
+  			}
 	  	}
 	}
 }
+		// @include set-container-width;
   // .main {
   //   $main-columns: 10;
   //   @include span-columns($main-columns omega, $medium-columns);
@@ -77,10 +123,5 @@ aside {}
 
 .footer-content {
 	
-}
-
-// when the layout gets too large
-@include at-breakpoint($medium-columns) {
-    
 }
 
