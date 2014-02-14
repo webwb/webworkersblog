@@ -5,7 +5,6 @@ tags: [markdown]
 category: code
 ---
 
-# Introduction #
 
 As I  add increasing numbers  of features to  MultiMarkdown, I decided  it was
 time to create  a sample document to  show them off. Many of  the features are

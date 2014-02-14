@@ -3,8 +3,15 @@ pageable: true
 per_page: 12
 ---
 aside
+	section.search
+		.aside-header-top
+			.count 
+				span.glyphicon.glyphicon-search
+			.name Beiträge durchsuchen
+
+
 	section.taglisting
-		.tag-link.aside-header
+		.aside-header-bottom
 			.count 
 				span.glyphicon.glyphicon-tag
 			.name Beiträge nach Kategorie
@@ -13,14 +20,14 @@ aside
 		/ 	| Beiträge nach Kategorie
 
 		- blog.tags.sort.each do | tag, articles |
-			.tag-link
+			.tag
 				.count = articles.size().to_s
 				.name 
 					| <a href="/blog/tags/#{tag}/">#{tag}</a>
 
 	/ profiles
 	section.profiles
-		.tag-link.aside-header
+		.aside-header-bottom
 			.count 
 				span.glyphicon.glyphicon-user
 			.name Beiträge nach Autor
