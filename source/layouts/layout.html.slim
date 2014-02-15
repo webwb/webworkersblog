@@ -6,9 +6,9 @@ html
     .container
       header.banner
         == partial "banner"
+      nav
+        == partial "mainnavigation"
       #main
-        nav
-          == partial "mainnavigation"
         section
           = yield
         == partial "aside"

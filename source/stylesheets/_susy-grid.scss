@@ -1,0 +1,83 @@
+//	.container
+//		header
+//		nav
+//		#main
+//			section
+//			aside
+//				.search
+//				.taglisting
+//				.profiles
+//		footer
+$total-columns: 4;
+$column-width   : 4em;            // each column is 4em wide
+$gutter-width   : 1em;            // 1em gutters between columns
+$grid-padding   : $gutter-width;  // grid-padding equal to gutters
+
+// --------------------------------------------------------
+// Layout
+//
+// Navigation is fuild until 37, that's 37x14px=518px
+nav {
+	background:#96C8DF;
+	margin-bottom: 3em;
+	.mainnavigation {  
+		max-width: 37em;
+		margin:0 auto; 
+	}
+}
+// --------------------------------------------------------
+// Media queries - Grids
+$media-small: 	34em 9;
+$media-desktop: 56em 12;
+$media-large:	72em 16;
+// --------------------------------------------------------
+// Grid Debug
+// #main {
+//   @include susy-grid-background;
+//   @include at-breakpoint($media-small)   { @include susy-grid-background; }
+//   @include at-breakpoint($media-desktop) { @include susy-grid-background; }
+//   @include at-breakpoint($media-large)   { @include susy-grid-background; }
+// }
+
+#main {	
+	padding: 0 1em;
+	@include at-breakpoint($media-small) {
+	    // @include container;
+		// @include susy-grid-background;
+		aside {
+			.search     { @include span-columns(9 omega); }
+			.taglisting { @include span-columns(4,9); }
+			.profiles   { @include span-columns(4 omega,9); 
+						  @include pre(1) }
+		}
+	}	
+	@include at-breakpoint($media-desktop) {
+	    @include container;
+		section { 
+			@include span-columns(7);
+			@include post(1);
+		}
+		aside {
+			@include span-columns(4 omega);
+			.search,
+			.taglisting,
+			.profiles { @include span-columns(4 omega,4); }
+		}
+	}
+	@include at-breakpoint($media-large) {
+	    @include set-container-width;
+		section { 
+			@include span-columns(8);
+		}
+		aside {
+			@include span-columns(7 omega);
+			.search  	{ 
+				@include span-columns(7 omega, 7); }
+			.taglisting { 
+				@include span-columns(3, 7); }
+			.profiles { 
+				@include span-columns(3 omega,7); 
+			}
+		}
+	}
+} // #main
