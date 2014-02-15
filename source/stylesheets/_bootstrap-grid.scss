@@ -1,0 +1,37 @@
+//	.container
+//		header
+//		nav
+//		#main
+//			section
+//			aside
+//				.search
+//				.taglisting
+//				.profiles
+//		footer
+
+$grid-columns:              12;
+$grid-gutter-width:         30px;
+$grid-float-breakpoint:     560px;
+
+
+nav {
+	background:#96C8DF;
+	margin-bottom: 3em;
+	.mainnavigation {  
+		max-width: 520px;
+		margin:0 auto; 
+	}
+}
+#main {	
+	@include make_row; 
+	// padding:2em;
+	section {
+		@include make-sm-column(8);
+
+	}
+	aside > section {
+		@include make-sm-column(4);
+		@include make-xs-column(6);
+		.search { @include make-sm-column(2); }
+	}
+}
