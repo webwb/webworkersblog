@@ -5,9 +5,9 @@ html
     .container
       header.banner
         == partial "banner"
+      nav
+        == partial "mainnavigation"
       #main
-        nav.mainnavigation
-          == partial "mainnavigation"
         section
           article
             = yield

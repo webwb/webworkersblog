@@ -8,6 +8,7 @@ set :kramdown,  :smartypants => true
 ###
 # Blog settings
 ###
+set :relative_links, true
 
 # Time.zone = "UTC"
 
@@ -89,7 +90,7 @@ activate :directory_indexes
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
-set :images_dir, 'images'
+# set :images_dir, 'images'
 set :partials_dir, 'partials'
 set :layout_dir, 'layouts'
 
@@ -105,8 +106,8 @@ configure :build do
   # activate :asset_hash
 
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
 
   # Or use a different image path
-  # set :http_prefix, "/Content/images/"
+  # set :http_prefix, "/build/images/"
 end

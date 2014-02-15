@@ -260,8 +260,11 @@ the image in a pdf.
 
 ![This is a **bolded** caption][Nautilus Star]
 
-[Nautilus Star]: upload.png "Nautilus Star" width="3in" height="2.4in"
+<img src="./face3.png">
 
+![some face](2014/02/09/2014-02-09-multimarkdown-test-page/face3.png)
+![some face](2014/02/09/multimarkdown-test-page/face3.png)
+![some face](multimarkdown-test-page/face3.png)
 
 ## Bibliography Support ##
 

@@ -7,8 +7,8 @@ category: mics
 
 The main navigation targets are still not set. Doing this, now. 
 
-- [Über uns](/about.html)
-- [Projekte](/projects/)
-- [Kontakt](/contact/)
+- Über Uns
+- Projekte
+- Kontakt
 
 
