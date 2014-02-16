@@ -1,6 +1,7 @@
 doctype html
 html
-  == partial "htmlhead"
+  head
+    == partial "htmlhead"
   body
     .container
       header.banner
@@ -12,28 +13,5 @@ html
           article
             = yield
       footer.footer
-            == partial "footer"
-
-
-  /     .content
-  /       section
-  /         div[role="main"]
-  /           article
-  /             .article-header
-  /               h2 = current_article.title
-  /               time datetime = current_article.date.strftime('%Y-%m-%d') = current_article.date.strftime('%B %e, %Y')
-  /               ul.article-tags
-  /                 - current_article.tags.each do |tag|
-  /                   li = link_to tag, tag_path(tag)
-  /             .article-body
-  /               == yield
-  /               == partial "share"
-  /               - if paginate
-  /                 - if next_page
-  /                   p = link_to 'Next page', next_page
-  /         == partial "navigation"
-  /     == partial "footer"
-
-  / / %ul.tags
-  / /   - tags.each do |tag|
-  / /     %li= link_to tag, "/tag/#{tag}"
+        == partial "footer"
+        
