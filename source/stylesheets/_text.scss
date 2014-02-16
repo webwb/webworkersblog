@@ -51,11 +51,12 @@ section > article {
 			text-decoration: none;
 			cursor: pointer;
 			color: #6899b5;
-		h2 {
-			font-weight: bold;
-			font-size: 1.6em;
 		}
-	}
+	header h2 {
+			font-weight: bold;
+			@include adjust-font-size-to(18px); 
+		}
+	
 	footer {
 		// @include clearfix;
 		color: #b3c9d6;
@@ -86,4 +87,4 @@ section > article {
 			position: relative;
 		}
 	}
-}		
+}	
