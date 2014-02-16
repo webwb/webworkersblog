@@ -1,3 +1,7 @@
+---
+title: Aktuelle Projekte
+---
+
 ## Aktuelle Projekte
 
 - nix

@@ -71,7 +71,7 @@ $media-large:	72em 16;
 		}
 		aside {
 			@include span-columns(7 omega);
-			.search  	{ 
+			.search { 
 				@include span-columns(7 omega, 7); }
 			.taglisting { 
 				@include span-columns(3, 7); }
