@@ -5,8 +5,19 @@ require "middleman-smusher"
 
 # Set slim-lang output style
 Slim::Engine.set_default_options :pretty => true
-set :markdown_engine, :kramdown 
-set :kramdown,  :smartypants => true
+activate :syntax
+
+set :markdown_engine, :redcarpet
+set :markdown,  :fenced_code_blocks => true, 
+                :smartypants => true, 
+                :footnotes => true, 
+                :prettify => true, 
+                :tables => true, 
+                :highlight => true,
+                :strikethrough => true,
+                :underline => true,
+                :autolink => true
+
 ###
 # Blog settings
 ###
@@ -45,6 +56,7 @@ page "/favicon.png", layout: false
 
 
 page "/blog/*", layout: "post"
+# page "/projects/*", layout: "projects"
 
 
 ###

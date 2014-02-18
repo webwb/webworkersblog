@@ -247,6 +247,25 @@ Very nice when you want to focus on writing, not grammar.
 
 [SmartyPants]: http://daringfireball.net/projects/smartypants/
 
+## More Typographical Icing
+
+Text can be **bold** (bold) or *italics* (italics) or ==highlight== (highlight) and _underlined_ (underlined) and even ~~striked~~ (striked through). Raw looks like this. 
+
+    Text can be **bold** (bold) or *italics* (italics) or 
+    ==highlight== (highlight) and _underlined_ (underlined) 
+    and even ~~striked~~ (striked through). 
+
+TODO: 
+  - italics add css for <em> @done
+
+## Auto Linking
+
+There is also autolink which convert a raw URL to a HTML link. http://localhost:4567/blog/2014/02/09/multimarkdown-test-page/ 
+
+Raw: 
+
+    There is also autolink which convert a raw URL to a HTML link. 
+    http://localhost:4567/blog/2014/02/09/multimarkdown-test-page/ 
 
 ## Image Support ##
 

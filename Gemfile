@@ -13,3 +13,4 @@ gem "slim"
 gem "nokogiri"
 gem 'susy'
 gem 'bootstrap-sass'
+gem 'redcarpet'
