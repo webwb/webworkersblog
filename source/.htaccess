@@ -1,0 +1,16 @@
+# compression
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript text/javascript
+# keep alive
+<ifModule mod_headers.c>
+	Header set Connection keep-alive
+</ifModule>
+
+AddDefaultCharset utf-8
+AddCharset utf-8 .html .css .js .xml
+
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)(\.gz)?$">
+	Header set Expires "Thu, 15 Feb 2015 20:00:00 GMT"
+	Header unset ETag
+	FileETag None
+	Header append Cache-Control "public"
+</FilesMatch>
