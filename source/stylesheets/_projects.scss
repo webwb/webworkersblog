@@ -1,0 +1,30 @@
+#main.projects {
+	article {
+		padding-bottom: 4em;
+		border:none;
+	}
+	h1, h2 {
+		display: inline;
+		font-size: 18px;
+		color: $text-color-light;
+	}
+	h1 {
+		font-size: 22px;
+		color: $text-color;
+	}
+	h2 {
+		font-weight: normal;
+	}
+	figure {
+		@include border-top-blue;
+		margin: 0 auto;
+		text-align: center;
+		padding: 2em;
+	}
+	hgroup {
+		@include border-top-yellow;
+	}
+	.content {
+		@include clearfix;
+	}
+}

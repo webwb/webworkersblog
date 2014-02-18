@@ -27,9 +27,9 @@ nav {
 }
 // --------------------------------------------------------
 // Media queries - Grids
-$media-small: 	34em 9;
+$media-small: 	34em  9;
 $media-desktop: 56em 12;
-$media-large:	72em 16;
+$media-large:	72em 16; 
 // --------------------------------------------------------
 // Grid Debug
 // #main {
@@ -38,11 +38,12 @@ $media-large:	72em 16;
 //   @include at-breakpoint($media-desktop) { @include susy-grid-background; }
 //   @include at-breakpoint($media-large)   { @include susy-grid-background; }
 // }
-
-#main {	
-	padding: 0 1em;
+	
+#main { padding: 0 1em; }
+footer {clear:both;}
+#main.blog {	
 	@include at-breakpoint($media-small) {
-	    // @include container;
+	    @include container;
 		// @include susy-grid-background;
 		aside {
 			.search     { @include span-columns(9 omega); }
@@ -81,3 +82,33 @@ $media-large:	72em 16;
 		}
 	}
 } // #main
+#main.projects {
+	@include at-breakpoint($media-small) {
+		@include set-container-width(56);
+		section { 			@include span-columns(9 omega);
+			article:nth-child(even) { 
+				@include clearfix;
+				figure { 	@include span-columns(3); }
+				hgroup {	@include span-columns(6 omega);	}
+				.content {	@include span-columns(6 omega); }
+			}
+			article:nth-child(odd) { 
+				@include clearfix;
+				figure { 	@include span-columns(3 omega); }
+				hgroup {	@include span-columns(6);}
+				.content {	@include span-columns(6); }
+			}
+		}
+	}
+	@include at-breakpoint($media-desktop) {
+		@include container;
+		// section { 			@include span-columns(12 omega);
+		// 	article { 
+		// 		@include clearfix;
+		// 		figure { 	@include span-columns(4); }
+		// 		hgroup {	@include span-columns(8 omega);	}
+		// 		.content {	@include span-columns(8 omega); }
+		// 	}	
+		// }
+	}
+}
