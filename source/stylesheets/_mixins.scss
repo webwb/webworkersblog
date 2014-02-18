@@ -2,19 +2,22 @@
 // Custom Mixins
 @mixin hover-btn-unhover {
 	padding: 5px 8px;
-	border: 2px #6899b5 solid;
+	border: 2px $text-color solid;
 	font-weight: bold;
 	border-radius: 5px;
-	color: #6899b5;
+	color: $text-color;
 	font-size: 0.8em;
 	text-decoration: none;
 }
 @mixin hover-btn-hover {
 	border: 2px transparent solid;
-	background: #6899b5;
+	background: $text-color;
 	color:white;
 }
 @mixin hover-btn {
 	@include hover-btn-unhover;
 	&:hover { @include hover-btn-hover; }
 }
+// Border top: 
+@mixin border-top-yellow { border-top: 6px $gelb solid; }
+@mixin border-top-blue   { border-top: 6px $dark-bg solid; }

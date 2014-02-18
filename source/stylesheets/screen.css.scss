@@ -8,15 +8,17 @@
 @import "susy";
 
 
-
-
 // Custom Styles from the beginning. 
 // They should be minized step by step.
 $gelb: #fecf2f;
 $header-bg: #96c8df; // blau
+$dark-bg: $header-bg; 
 $header-sub-text: #aedcf1;
 $footer-bg: #ddebf2;
 $footer-text: #85a7bb;
+// Text Colors
+$text-color:#6899b5;
+$text-color-light:#B3C9D6;
 // Font used in banner
 $lucida-font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
 
@@ -34,6 +36,7 @@ $lucida-font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verd
 @import "banner";
 @import "mainnavigation";
 @import "text";
+@import "projects";
 @import "aside";
 @import "pagination";
 @import "footer";

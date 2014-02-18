@@ -11,7 +11,7 @@
 	span {
 		position: relative;
 		line-height: 2em;
-		color: #6899b5;
+		color: $text-color;
 		&.newer { left:-8.42em; float: left; }
 		&.older { right:-8.1em; float: right;}
 	}
