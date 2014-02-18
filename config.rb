@@ -1,6 +1,8 @@
 require "slim"
 require 'susy'
 require 'bootstrap-sass'
+require "middleman-smusher"
+
 # Set slim-lang output style
 Slim::Engine.set_default_options :pretty => true
 set :markdown_engine, :kramdown 
@@ -38,6 +40,10 @@ activate :blog do |blog|
 end
 
 page "/feed.xml", layout: false
+page "/.htacsess", layout: false
+page "/favicon.png", layout: false
+
+
 page "/blog/*", layout: "post"
 
 
@@ -97,26 +103,31 @@ set :layout_dir, 'layouts'
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Enable cache buster
-  # activate :asset_hash
+  activate :asset_hash
 
   # Use relative URLs
   activate :relative_assets
 
   # Or use a different image path
   # set :http_prefix, "/build/images/"
+
+  # Compress PNGs after build
+  # First: gem install middleman-smusher
+  # require "middleman-smusher"
+  # activate :smusher
 end
 
 
 activate :deploy do |deploy|
   deploy.method = :rsync
   deploy.host   = "blsn.de"
-  deploy.path   = "/var/www/virtual/blsn/html/build/"
+  deploy.path   = "/var/www/virtual/blsn/html/"
   # Optional Settings
   deploy.clean = true # remove orphaned files on remote host, default: false
   deploy.build_before = true # default: false
