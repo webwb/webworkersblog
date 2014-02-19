@@ -14,7 +14,7 @@ $gutter-width   : 1em;            // 1em gutters between columns
 $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 
 
-$container-style: magic;
+$container-style: fluid;
 
 // --------------------------------------------------------
 // Layout
@@ -126,28 +126,52 @@ footer {clear:both;}
 		// }
 	}
 }
-
-.footer {
-	.footer-content {
-		@include container($media-small);
-		@include susy-grid-background;
-		text-align: center;
-		.created-text {
-			@include span-columns(4 omega);
-		}
-		.logos a {
-			padding: 1em;
-		}
-		.logos a:nth-child(even) {
-			@include span-columns(2 omega);	
-		}
-		.logos a:nth-child(odd) {
-			@include span-columns(2);	
-		}
-		.copy-right {
-			@include span-columns(4 omega);
+.footer .footer-content {
+	.created-text { padding: 1em}
+	.logos { 
+		padding: 1em; 
+		a {
+			display: inline-block;
+			padding: 0 1em;
 		}
 	}
+}
+.footer {
+	.footer-content {
+		@include container;
+		@include susy-grid-background;
+		max-width: 56em;
+		text-align: center;
+
+
+
+
+
+		@include at-breakpoint($media-small) {
+			// @include container();
+			@include set-container-width(56);
+			// @include susy-grid-background;
+			text-align: left;
+			
+			.created-text {
+				@include span-columns(6);
+				@include post(3);
+			}
+			.logos{
+				@include span-columns(6);
+				// @include post(3);
+				display: inline;
+				padding: 1em;
+				
+			}
+			.copy-right {
+				// @include push(6);
+				@include span-columns(3 omega );
+
+			}
+		}
+	}
+	// @include at-breakpoint($media-desktop) { @include container; }
 }
 
 

@@ -1,7 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    activesupport (3.2.16)
+    activesupport (3.2.17)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
     addressable (2.3.5)
@@ -65,11 +65,11 @@ GEM
       middleman-core (>= 3.0.0)
       net-sftp
       ptools
-    middleman-livereload (3.1.1)
-      em-websocket (>= 0.2.0)
-      middleman-core (>= 3.0.2)
-      multi_json (~> 1.0)
-      rack-livereload
+    middleman-livereload (3.2.1)
+      em-websocket (~> 0.5.0)
+      middleman-core (~> 3.2)
+      multi_json (~> 1.8.4)
+      rack-livereload (~> 0.3.15)
     middleman-smusher (3.0.0)
       middleman (>= 3.0.0)
       smusher (~> 0.4.9)
@@ -85,7 +85,7 @@ GEM
     net-ssh (2.8.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
-    ptools (1.2.2)
+    ptools (1.2.3)
     rack (1.5.2)
     rack-livereload (0.3.15)
       rack
@@ -95,9 +95,9 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.3)
       ffi (>= 0.5.0)
-    rb-kqueue (0.2.0)
+    rb-kqueue (0.2.2)
       ffi (>= 0.5.0)
-    redcarpet (3.1.0)
+    redcarpet (3.1.1)
     sass (3.2.14)
     slim (2.0.2)
       temple (~> 0.6.6)
