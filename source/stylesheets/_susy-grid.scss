@@ -13,6 +13,9 @@ $column-width   : 4em;            // each column is 4em wide
 $gutter-width   : 1em;            // 1em gutters between columns
 $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 
+
+$container-style: magic;
+
 // --------------------------------------------------------
 // Layout
 //
@@ -32,12 +35,12 @@ $media-desktop: 56em 12;
 $media-large:	72em 16; 
 // --------------------------------------------------------
 // Grid Debug
-// #main {
-//   @include susy-grid-background;
-//   @include at-breakpoint($media-small)   { @include susy-grid-background; }
-//   @include at-breakpoint($media-desktop) { @include susy-grid-background; }
-//   @include at-breakpoint($media-large)   { @include susy-grid-background; }
-// }
+footer.footer .footer-container {
+  @include susy-grid-background;
+  @include at-breakpoint($media-small)   { @include susy-grid-background; }
+  @include at-breakpoint($media-desktop) { @include susy-grid-background; }
+  @include at-breakpoint($media-large)   { @include susy-grid-background; }
+}
 	
 #main { padding: 0 1em; }
 footer {clear:both;}
@@ -82,9 +85,20 @@ footer {clear:both;}
 		}
 	}
 } // #main
+
+// -------------------------------------------------
+// Projects Layout
+#main.projects {
+	section article hgroup,
+	section article .content {
+		padding: 0 0.5em;
+	}
+}
+
 #main.projects {
 	@include at-breakpoint($media-small) {
 		@include set-container-width(56);
+		section article figure { padding-top: 3.4em; }
 		section { 			@include span-columns(9 omega);
 			article:nth-child(even) { 
 				@include clearfix;
@@ -112,3 +126,38 @@ footer {clear:both;}
 		// }
 	}
 }
+
+.footer {
+	.footer-content {
+		@include container($media-small);
+		@include susy-grid-background;
+		text-align: center;
+		.created-text {
+			@include span-columns(4 omega);
+		}
+		.logos a {
+			padding: 1em;
+		}
+		.logos a:nth-child(even) {
+			@include span-columns(2 omega);	
+		}
+		.logos a:nth-child(odd) {
+			@include span-columns(2);	
+		}
+		.copy-right {
+			@include span-columns(4 omega);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
