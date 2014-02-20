@@ -106,7 +106,7 @@ GEM
       httpclient (>= 2.2)
       json
       rake
-    sprockets (2.10.1)
+    sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
