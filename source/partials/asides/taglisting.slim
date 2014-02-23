@@ -1,0 +1,14 @@
+section.taglisting
+	.aside-header-bottom
+		.count 
+			span.glyphicon.glyphicon-tag
+		.name Beiträge nach Kategorie
+	/ h1 
+	/ 	span.glyphicon.glyphicon-tag 
+	/ 	| Beiträge nach Kategorie
+
+	- blog.tags.sort.each do | tag, articles |
+		.tag
+			.count = articles.size().to_s
+			.name 
+				| <a href="/blog/tags/#{tag}/">#{tag}</a>
