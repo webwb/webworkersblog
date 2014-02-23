@@ -46,9 +46,7 @@ aside {
 			float: left;
 			a {
 				font-weight: normal;
-				@include unstyled-link;
 				text-transform: capitalize;
-
 				}
 			}
 		}

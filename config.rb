@@ -110,7 +110,7 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 # set :images_dir, 'images'
 set :partials_dir, 'partials'
-set :layout_dir, 'layouts'
+set :layouts_dir, 'layouts'
 
 # Build-specific configuration
 configure :build do

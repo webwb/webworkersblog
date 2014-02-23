@@ -20,17 +20,17 @@
 }
 
 .mainnavigation ul li a {
-  @include unstyled-link;
- 		margin: 2px;
- 		padding: 4px;
- 		color:white;
+  	text-decoration: none;
+	margin: 2px;
+	padding: 4px;
+	color:white;
   &.active {
-  		border-bottom: 2px $gelb solid;
-  		margin-bottom: 0;
+	border-bottom: 2px $gelb solid;
+	margin-bottom: 0;
   }
   &:hover { 
   	@include border-radius;
-  	 	border: 2px white solid;
- 		margin: 0;
+ 	border: 2px white solid;
+	margin: 0;
   }
 }

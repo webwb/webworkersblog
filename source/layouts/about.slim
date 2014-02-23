@@ -1,15 +1,2 @@
-doctype html
-html
-  head
-    == partial "htmlhead"
-  body
-    .container
-      header.banner
-        == partial "banner"
-      nav
-        == partial "mainnavigation"
-      #main.about
-        section
-          = yield
-      footer.footer
-        == partial "footer"
+- wrap_layout :layout do 
+	= yield

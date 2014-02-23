@@ -1,0 +1,4 @@
+- wrap_layout :layout do 
+	- if is_blog_article?
+		h1= current_article.title
+	= yield

@@ -1,0 +1,16 @@
+doctype html
+html
+  == partial "htmlhead"
+  body
+    .container
+      == partial "banner"
+      == partial "mainnavigation"
+      
+
+      #main[ class="#{page_classes}" ]
+
+        section
+          = yield
+        == partial "aside"
+
+      == partial "footer"

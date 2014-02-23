@@ -44,7 +44,9 @@ footer.footer .footer-container {
 	
 #main { padding: 0 1em; }
 footer {clear:both;}
-#main.blog {	
+#main.blog,
+#main.about,#main.contact,
+#main.index {	
 	@include at-breakpoint($media-small) {
 	    @include container;
 		// @include susy-grid-background;
