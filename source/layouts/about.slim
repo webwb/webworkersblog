@@ -8,10 +8,8 @@ html
         == partial "banner"
       nav
         == partial "mainnavigation"
-      #main
+      #main.about
         section
-          = article.title
-            = yield
+          = yield
       footer.footer
         == partial "footer"
-        
